@@ -5,13 +5,15 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
+
 @NgModule({
   declarations: [
     HomeComponent
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    
     
 
   ],
