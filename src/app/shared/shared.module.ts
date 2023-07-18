@@ -8,10 +8,15 @@ import {MatDialogModule} from '@angular/material/dialog'
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
+import { FullNamePipe } from './pipes/full-name.pipe';
+import { SizeTittleDirective } from './directives/size-tittle.directive';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    FullNamePipe,
+    SizeTittleDirective
+  ],
   imports: [
     CommonModule
   ],
@@ -23,7 +28,9 @@ import {MatTableModule} from '@angular/material/table';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    FullNamePipe,
+    SizeTittleDirective
    
     
   ]
