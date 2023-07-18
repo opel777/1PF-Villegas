@@ -7,4 +7,4 @@
 
 <h1><span appSizeTittle>Listado de Alumnos</span></h1>
 
-<app-user-table [dataSource]="users"></app-user-table>
+<app-user-table [dataSource]="users" (deleteUser)="onDeleteUser($event)" (editUser)="onEditUser($event)"></app-user-table>

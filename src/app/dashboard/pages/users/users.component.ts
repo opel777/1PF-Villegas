@@ -9,6 +9,20 @@ const ELEMENT_DATA: User[] = [
     surname:'Perez',
     email:'MarcorPerez@hotmail.com',
     password:'Marcos1234'
+  },
+  {
+    id:2,
+    name:'Luis',
+    surname:'Rodriguez',
+    email:'LuisRodri@hotmail.com',
+    password:'Luis1234'
+  },
+  {
+    id:3,
+    name:'Juan',
+    surname:'Bolivar',
+    email:'JuanBoli@hotmail.com',
+    password:'juan1234'
   }
 ];
 
@@ -48,4 +62,31 @@ onCreateUser():void{
   }
  })
 }
+
+onDeleteUser(userToDelete:User):void{
+  console.log(userToDelete);
+  if(confirm(`Esta seguro de Eliminar a ${userToDelete.name}`)){
+  this.users = this.users.filter((u)=> u.id !==userToDelete.id)
+  }
+}
+
+
+onEditUser(userToEdit: User):void{
+  const dialogRef = this.matDialog.open(UserFormDialogComponent,{
+    data:userToEdit
+  })
+ dialogRef.afterClosed().subscribe({
+  next:(userUpdated) =>{
+   console.log(userUpdated) 
+   if (userUpdated){ 
+    this.users= this.users.map((user)=>{
+
+      return user.id === userToEdit.id
+       ? {...user, ...userUpdated}
+       : user
+    })
+   }
+     }
+   })
+  }
 }
