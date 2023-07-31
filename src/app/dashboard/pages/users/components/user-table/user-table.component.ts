@@ -8,6 +8,7 @@ import { User } from '../../model';
   styleUrls: ['./user-table.component.scss']
 })
 export class UserTableComponent {
+
   displayedColumns: string[] = ['id', 'fullName', 'email','actions'];
   @Input()
   dataSource: User[]= [];
@@ -17,4 +18,5 @@ export class UserTableComponent {
 
   @Output()
   editUser = new EventEmitter<User>();
+
 }

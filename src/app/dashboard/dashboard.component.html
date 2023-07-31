@@ -2,28 +2,14 @@
 
   <!-- SIDEBAR -->
     <mat-drawer opened mode="over" #drawer class="example-sidenav" mode="side">
-      <mat-nav-list>
-        <a routerLink="home" mat-list-item>Inicio</a>
-        <a routerLink="users" mat-list-item>Usuario</a>
-        <a routerLink="/auth" mat-list-item>Cerrar Sesion</a>
-      </mat-nav-list>
+      <app-nav-menu></app-nav-menu>
     </mat-drawer>
   <!-- FIN SIDEBAR -->
 
   <!-- CONTENT WRAPPER -->
     <div class="example-sidenav-content">
 
-      <!-- TOOLBAR -->
-
-        <mat-toolbar color="primary">
-          <button mat-icon-button (click)="drawer.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon>menu</mat-icon>
-          </button>
-          <span>My App Student</span>
-          <span class="example-spacer"></span>
-        </mat-toolbar>
-    
-      <!-- FIN TOOLBAR -->
+      <app-toolbar [drawer]="drawer"></app-toolbar>
       <main class="p-3">
                 <router-outlet></router-outlet>
       </main>

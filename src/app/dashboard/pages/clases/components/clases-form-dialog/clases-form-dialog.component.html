@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>Crear Clase</h1>
+<div mat-dialog-content>
+<form [formGroup]="clasesForm" class="grid">
+    <div class="field-row">
+    <div class="field col-6 p-1">
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Nombre clase</mat-label>
+            <input formControlName="name" matInput  placeholder="Name" type="text" name="name"/>
+            <mat-error *ngIf="nameControl.hasError('required')">
+                Este campo es Requerido
+            </mat-error>
+            <mat-error *ngIf="nameControl.hasError('minlength')">
+                Este campo debe tener al menos {{nameControl.errors?.['minlength']?.requiredLength}} letras
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="field col-6 p-1" >
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Nombre Profesor</mat-label>
+            <input formControlName="nameteacher" matInput placeholder="teacher_class" type="text" name="teacher_class">
+            <mat-error *ngIf="nameteacherControl.hasError('required')">
+                Este campo es Requerido
+            </mat-error>
+            <mat-error *ngIf="nameteacherControl.hasError('minlength')">
+                Este campo debe tener al menos {{nameteacherControl.errors?.['minlength']?.requiredLength}} letras
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+</div> 
+<div class="field-row">
+    
+</div>
+</form>
+</div>
+<div mat-dialog-actions>
+<button mat-button mat-dialog-close>Cancelar</button>
+<button (click)="onSubmit()" type="submit" mat-button>Guardar</button>
+</div>
+
+
+

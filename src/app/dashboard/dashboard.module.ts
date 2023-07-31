@@ -10,6 +10,9 @@ import { UsersModule } from './pages/users/users.module';
 import { RouterModule } from '@angular/router';
 import {MatListModule} from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
+import { ToolbarComponent } from './layout/toolbar/toolbar.component';
+import { ClasesModule } from './pages/clases/clases.module';
 
 
 
@@ -17,6 +20,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     DashboardComponent,
+    NavMenuComponent,
+    ToolbarComponent,
    
    
   ],
@@ -30,7 +35,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     RouterModule,
     HomeModule,
     UsersModule,
-    MatDialogModule
+    MatDialogModule,
+    ClasesModule
     
     
   ],
