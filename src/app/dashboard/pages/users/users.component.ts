@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog} from '@angular/material/dialog';
 import { UserFormDialogComponent } from './components/user-form-dialog/user-form-dialog.component';
 import { User } from './model';
 const ELEMENT_DATA: User[] = [
@@ -38,46 +38,45 @@ constructor(
   private matDialog: MatDialog
 ){}
 
+
+//funcion para crear usuario//
 onCreateUser():void{
  const dialogRef = this.matDialog.open(UserFormDialogComponent);
  dialogRef.afterClosed().subscribe({
-  next:(v) =>{
-    if(v){
+  next:(newStudent) =>{
+    if(newStudent){
 
       this.users=[
         ...this.users,
 { id:this.users.length + 1,
-  name: v.name,
-  surname:v.surname,
-  email:v.email,
-  password:v.password
+  name: newStudent.name,
+  surname:newStudent.surname,
+  email:newStudent.email,
+  password:newStudent.password
   },
-      ];
-        
-      console.log('Recibimos el valor:',v);
-    } else {
-      console.log('Se cancelo');
-    }
-    
+      ];  
+    }  
   }
  })
 }
 
+//funcion para eliminar usuario//
 onDeleteUser(userToDelete:User):void{
-  console.log(userToDelete);
   if(confirm(`Esta seguro de Eliminar a ${userToDelete.name}`)){
   this.users = this.users.filter((u)=> u.id !==userToDelete.id)
   }
 }
 
-
+//funcion para eliminar usuario//
 onEditUser(userToEdit: User):void{
   const dialogRef = this.matDialog.open(UserFormDialogComponent,{
     data:userToEdit
   })
+
+
  dialogRef.afterClosed().subscribe({
   next:(userUpdated) =>{
-   console.log(userUpdated) 
+   
    if (userUpdated){ 
     this.users= this.users.map((user)=>{
 

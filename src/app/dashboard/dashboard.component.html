@@ -1,15 +1,12 @@
 <mat-drawer-container class="example-container" autosize>
 
   <!-- SIDEBAR -->
-    <mat-drawer mode="over" #drawer class="example-sidenav" mode="side">
-      <H1>
-        <span class="material-icons md-light">face</span>
-        Lista de Alumnos
-      </H1>
-      
-      <H1>
-        Cursos 
-      </H1>
+    <mat-drawer opened mode="over" #drawer class="example-sidenav" mode="side">
+      <mat-nav-list>
+        <a routerLink="home" mat-list-item>Inicio</a>
+        <a routerLink="users" mat-list-item>Usuario</a>
+        <a routerLink="/auth" mat-list-item>Cerrar Sesion</a>
+      </mat-nav-list>
     </mat-drawer>
   <!-- FIN SIDEBAR -->
 
@@ -28,8 +25,7 @@
     
       <!-- FIN TOOLBAR -->
       <main class="p-3">
-        <!-- <app-home></app-home> -->
-        <app-users></app-users>
+                <router-outlet></router-outlet>
       </main>
     </div>
   <!-- FIN CONTENT WRAPPER -->

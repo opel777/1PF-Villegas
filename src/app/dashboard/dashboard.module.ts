@@ -7,6 +7,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { HomeModule } from './pages/home/home.module';
 import { UsersModule } from './pages/users/users.module';
+import { RouterModule } from '@angular/router';
+import {MatListModule} from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -22,8 +26,13 @@ import { UsersModule } from './pages/users/users.module';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    MatListModule,
+    RouterModule,
     HomeModule,
-    UsersModule
+    UsersModule,
+    MatDialogModule
+    
+    
   ],
   exports:[
     DashboardComponent,
