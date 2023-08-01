@@ -1,1 +1,10 @@
-<p>cursos works!</p>
+<h1><span appSizeTittle>Listado de Cursos</span></h1>
+
+<app-cursos-table [dataSource]="users" (deleteCursos)="onDeleteCursos($event)" (editCursos)="onEditCursos($event)"></app-cursos-table>
+
+<div class="mb-5 p-3" >
+    <button (click)="onCreateCursos()" mat-flat-button color="primary" type="button">
+     <mat-icon>add</mat-icon>
+        Crear Curso
+    </button>
+    </div>

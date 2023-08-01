@@ -13,6 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 import { ClasesModule } from './pages/clases/clases.module';
+import { CursosModule } from './pages/cursos/cursos.module';
 
 
 
@@ -36,7 +37,8 @@ import { ClasesModule } from './pages/clases/clases.module';
     HomeModule,
     UsersModule,
     MatDialogModule,
-    ClasesModule
+    ClasesModule,
+    CursosModule
     
     
   ],

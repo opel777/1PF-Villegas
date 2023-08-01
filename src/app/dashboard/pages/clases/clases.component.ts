@@ -5,20 +5,20 @@ import { Materia } from './model';
 const ELEMENT_DATA: Materia[] = [
   {
     id:1,
-    name:'JavaScript',
-    nameteacher:'Perez',
+    name:'Bases de Datos',
+    nameteacher:'Prof. Jose Perez',
     
   },
   {
     id:2,
     name:'Sql',
-    nameteacher:'Rodriguez',
+    nameteacher:'Prof. Juan Rodriguez',
     
   },
   {
     id:3,
     name:'Ruby',
-    nameteacher:'Bolivar',
+    nameteacher:'Prof. Alejandro Bolivar',
   
   }
 ];
