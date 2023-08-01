@@ -8,7 +8,7 @@
             <mat-label>Nombre clase</mat-label>
             <input formControlName="name" matInput  placeholder="Name" type="text" name="name"/>
             <mat-error *ngIf="nameControl.hasError('required')">
-                Este campo es Requerido
+                Este campo es Requerido.
             </mat-error>
             <mat-error *ngIf="nameControl.hasError('minlength')">
                 Este campo debe tener al menos {{nameControl.errors?.['minlength']?.requiredLength}} letras
