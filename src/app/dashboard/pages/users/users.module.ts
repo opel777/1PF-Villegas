@@ -7,6 +7,7 @@ import { UserTableComponent } from './components/user-table/user-table.component
 import { MatDialogModule } from '@angular/material/dialog';
 import { UserDetailComponent } from './pages/user-detail/user-detail.component';
 import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     SharedModule,
     MatDialogModule,
-    RouterModule
+    RouterModule,
+    MatIconModule
   ],
   exports:[
     UsersComponent
