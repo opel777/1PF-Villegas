@@ -1,15 +1,29 @@
-import { NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthComponent } from './auth.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
+
 
 
 
 @NgModule({
   declarations: [
-    AuthComponent
+    AuthComponent,
+    RegisterComponent,
+    LoginComponent
   ],
+  
+
   imports: [
-    CommonModule
+    CommonModule,
+    MatToolbarModule,
+    SharedModule,
+    RouterModule
+   
   ]
 })
 export class AuthModule { }

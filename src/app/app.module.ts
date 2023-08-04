@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { RouterModule } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AuthModule } from './auth/auth.module';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserAnimationsModule,
     RouterModule,
     MatDialogModule,
-    DashboardModule
+    DashboardModule,
+    AuthModule,
+    MatCardModule
     
    
   ],

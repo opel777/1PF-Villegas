@@ -1,0 +1,20 @@
+main{
+   
+    background-image:url("https://i1.wp.com/webadictos.com/media/2021/08/coder-house.jpeg?fit=1920%2C1080&ssl=1");
+    background-repeat: no-repeat;
+   
+}
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 10%;
+    height: 100vh; 
+  }
+  .col-12 {
+    max-width: 40%; 
+    width: 100%; 
+  }
+   div{
+    background-color: rgba(255, 255, 255, 0.049)
+   }
