@@ -10,6 +10,8 @@ import { ClasesComponent } from './dashboard/pages/clases/clases.component';
 import { UserDetailComponent } from './dashboard/pages/users/pages/user-detail/user-detail.component';
 import { LoginComponent } from './auth/pages/login/login.component';
 import { RegisterComponent } from './auth/pages/register/register.component';
+import { CursosDetailComponent } from './dashboard/pages/cursos/pages/cursos-detail/cursos-detail.component';
+import { ClasesDetailComponent } from './dashboard/pages/clases/pages/clases-detail/clases-detail.component';
 
 const routes: Routes = [
 
@@ -37,8 +39,16 @@ const routes: Routes = [
         component:CursosComponent,
       },
       {
+        path:'cursos/:id',
+        component:CursosDetailComponent,
+      },
+      {
         path:'clases',
         component:ClasesComponent,
+      },
+      {
+        path:'clases/:id',
+        component:ClasesDetailComponent,
       },
       {
         path:'**',

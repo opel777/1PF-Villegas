@@ -31,7 +31,7 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef><span appSizeTittle> Acciones</span> </th>
         <td mat-cell *matCellDef="let element"> 
-          <button routerLink="/user" mat-icon-button >
+          <button  [routerLink]="['/dashboard/clases', element.id]" mat-icon-button >
             <mat-icon>visibility</mat-icon>
           </button>
           <button (click)="editMateria.emit(element)" mat-icon-button >

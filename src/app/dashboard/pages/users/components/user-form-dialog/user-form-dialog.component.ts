@@ -9,6 +9,9 @@ import { User } from '../../model';
   styleUrls: ['./user-form-dialog.component.scss']
 })
 export class UserFormDialogComponent {
+editingUser?:User;
+
+
   nameControl = new FormControl<string | null>(null,[Validators.required,Validators.minLength(2)]);
   surnameControl = new FormControl<string | null>(null,[Validators.required,Validators.minLength(2)]);
   emailControl = new FormControl<string | null>(null,[Validators.required,Validators.pattern(/^\w+([\-\.]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]);
@@ -26,6 +29,7 @@ export class UserFormDialogComponent {
     @Inject(MAT_DIALOG_DATA) private data?:User,
     ){
       if(this.data){
+        this.editingUser = this.data;
         this.nameControl.setValue(this.data.name);
         this.surnameControl.setValue(this.data.surname);
         this.emailControl.setValue(this.data.email);

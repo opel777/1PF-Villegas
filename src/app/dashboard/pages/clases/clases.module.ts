@@ -7,6 +7,7 @@ import { ClasesFormDialogComponent } from './components/clases-form-dialog/clase
 import { ClasesTableComponent } from './components/clases-table/clases-table.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ClasesDetailComponent } from './pages/clases-detail/clases-detail.component';
 
 
 
@@ -14,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     ClasesComponent,
     ClasesFormDialogComponent,
-    ClasesTableComponent
+    ClasesTableComponent,
+    ClasesDetailComponent
   ],
   imports: [
     CommonModule,

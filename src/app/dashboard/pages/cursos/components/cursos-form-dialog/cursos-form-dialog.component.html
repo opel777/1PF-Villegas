@@ -1,5 +1,5 @@
-<p>cursos-form-dialog works!</p>
-<h1 mat-dialog-title>Crear Clase</h1>
+
+<h1 mat-dialog-title>{{editingCurso ? "Editando a " + editingCurso.name + " " :"Creando Curso"}}</h1>
 <div mat-dialog-content>
 <form [formGroup]="cursosForm" class="grid">
     <div class="field-row">

@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Crear Clase</h1>
+<h1 mat-dialog-title>{{editingClase ? "Editando a " + editingClase.name + " " + editingClase.nameteacher :"Creando Usuario"}}</h1>
 <div mat-dialog-content>
 <form [formGroup]="clasesForm" class="grid">
     <div class="field-row">
