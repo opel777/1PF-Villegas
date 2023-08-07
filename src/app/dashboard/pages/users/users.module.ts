@@ -8,6 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { UserDetailComponent } from './pages/user-detail/user-detail.component';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { UserRoutingModule } from './users-routing.module';
 
 
 
@@ -23,7 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
     SharedModule,
     MatDialogModule,
     RouterModule,
-    MatIconModule
+    MatIconModule,
+    UserRoutingModule
   ],
   exports:[
     UsersComponent

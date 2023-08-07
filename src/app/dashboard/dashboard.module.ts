@@ -14,6 +14,8 @@ import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 import { ClasesModule } from './pages/clases/clases.module';
 import { CursosModule } from './pages/cursos/cursos.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
+
 
 
 
@@ -38,7 +40,9 @@ import { CursosModule } from './pages/cursos/cursos.module';
     UsersModule,
     MatDialogModule,
     ClasesModule,
-    CursosModule
+    CursosModule,
+    DashboardRoutingModule,
+   
     
     
   ],

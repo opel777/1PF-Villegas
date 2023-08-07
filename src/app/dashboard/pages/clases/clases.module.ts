@@ -8,6 +8,7 @@ import { ClasesTableComponent } from './components/clases-table/clases-table.com
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClasesDetailComponent } from './pages/clases-detail/clases-detail.component';
+import { CursosRoutingModule } from './clases-routing.module';
 
 
 
@@ -25,6 +26,7 @@ import { ClasesDetailComponent } from './pages/clases-detail/clases-detail.compo
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
+    CursosRoutingModule
     
   ]
 })

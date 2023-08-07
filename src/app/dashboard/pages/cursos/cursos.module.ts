@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CursosComponent } from './cursos.component';
 import { CursosTableComponent } from './components/cursos-table/cursos-table.component';
 import { CursosDetailComponent } from './pages/cursos-detail/cursos-detail.component';
+import { CursosRoutingModule } from './cursos-routing.module';
 
 
 
@@ -28,6 +29,7 @@ import { CursosDetailComponent } from './pages/cursos-detail/cursos-detail.compo
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
+    CursosRoutingModule
   
     
   ]
