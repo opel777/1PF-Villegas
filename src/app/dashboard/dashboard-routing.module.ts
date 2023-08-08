@@ -1,12 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { UsersComponent } from './pages/users/users.component';
-import { UserDetailComponent } from './pages/users/pages/user-detail/user-detail.component';
-import { CursosComponent } from './pages/cursos/cursos.component';
-import { CursosDetailComponent } from './pages/cursos/pages/cursos-detail/cursos-detail.component';
-import { ClasesComponent } from './pages/clases/clases.component';
-import { ClasesDetailComponent } from './pages/clases/pages/clases-detail/clases-detail.component';
 
 
 
