@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { MatCardModule } from '@angular/material/card';
+import {  HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { MatCardModule } from '@angular/material/card';
     MatDialogModule,
     // DashboardModule,
     // AuthModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
     
    
   ],

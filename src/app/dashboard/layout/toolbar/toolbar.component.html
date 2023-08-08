@@ -1,12 +1,16 @@
 <!-- TOOLBAR -->
 
 <mat-toolbar color="primary">
+  <mat-toolbar-row>
     <button mat-icon-button (click)="drawer?.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>My App Student</span>
     <span class="example-spacer"></span>
-   <p>{{ (authUser$ | async )?.name }}</p>
-  </mat-toolbar>
+    <span>My App Student</span>
+    <span class="user-name" *ngIf="authUser$ | async; let authUser">
+      {{ authUser?.name }} {{ authUser?.surname }}
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
 
 <!-- FIN TOOLBAR -->

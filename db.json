@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Gustavo",
+      "surname": "villegas",
+      "email": "villegas@mail.com",
+      "password": "123456"
+    },
+    {
+      "name": "gustavoooo",
+      "email": "villegasgustavoopel@hotmail.com",
+      "password": "tomasa1679",
+      "surname": "pepepelocuas",
+      "token": "Ttc3saCUpFZxSfww1qST",
+      "id": 2
+    },
+    {
+      "name": "lolo",
+      "email": "villegasgustavoopel@hotmail.com",
+      "password": "tomasa1679",
+      "surname": "lelele",
+      "token": "eMwgNW5utID1rOPiO5Ia",
+      "id": 3
+    }
+  ],
+  "products": []
+}

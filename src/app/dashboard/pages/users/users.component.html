@@ -2,7 +2,9 @@
 
 <h1><span appSizeTittle>Listado de Alumnos</span></h1>
 
-<app-user-table [dataSource]="users" (deleteUser)="onDeleteUser($event)" (editUser)="onEditUser($event)"></app-user-table>
+<app-user-table [dataSource]="(users | async) || []"
+(deleteUser)="onDeleteUser($event)"
+(editUser)="onEditUser($event)"></app-user-table>
 
 <div class="mb-5 p-3" >
     <button (click)="onCreateUser()" mat-flat-button color="primary" type="button">

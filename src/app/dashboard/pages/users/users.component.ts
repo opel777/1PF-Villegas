@@ -1,91 +1,75 @@
-import { Component } from '@angular/core';
-import { MatDialog} from '@angular/material/dialog';
+import { Component, OnDestroy } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { UserFormDialogComponent } from './components/user-form-dialog/user-form-dialog.component';
+import { UserService } from './user.service';
+import { Observable, Subject } from 'rxjs';
 import { User } from './model';
-const ELEMENT_DATA: User[] = [
-  {
-    id:1,
-    name:'Marcos',
-    surname:'Perez',
-    email:'MarcorPerez@hotmail.com',
-    password:'Marcos1234'
-  },
-  {
-    id:2,
-    name:'Luis',
-    surname:'Rodriguez',
-    email:'LuisRodri@hotmail.com',
-    password:'Luis1234'
-  },
-  {
-    id:3,
-    name:'Juan',
-    surname:'Bolivar',
-    email:'JuanBoli@hotmail.com',
-    password:'juan1234'
-  }
-];
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  styleUrls: ['./users.component.scss'],
 })
-export class UsersComponent {
+export class UsersComponent implements OnDestroy {
+  public users: Observable<User[]>;
+  public isLoading$: Observable<boolean>;
+  public destroyed = new Subject<boolean>();
 
-  public users:User[]=ELEMENT_DATA;
-constructor(
-  private matDialog: MatDialog
-){}
-
-
-//funcion para crear usuario//
-onCreateUser():void{
- const dialogRef = this.matDialog.open(UserFormDialogComponent);
- dialogRef.afterClosed().subscribe({
-  next:(newStudent) =>{
-    if(newStudent){
-
-      this.users=[
-        ...this.users,
-{ id:this.users.length + 1,
-  name: newStudent.name,
-  surname:newStudent.surname,
-  email:newStudent.email,
-  password:newStudent.password
-  },
-      ];  
-    }  
+  public loading = false;
+  constructor(private matDialog: MatDialog, private userService: UserService) {
+    this.userService.loadUsers();
+    this.isLoading$ = this.userService.isLoading$;
+    this.users = this.userService.getUsers();
   }
- })
-}
 
-//funcion para eliminar usuario//
-onDeleteUser(userToDelete:User):void{
-  if(confirm(`Esta seguro de Eliminar a ${userToDelete.name}`)){
-  this.users = this.users.filter((u)=> u.id !==userToDelete.id)
+  ngOnDestroy(): void {
+    this.destroyed.next(true);
   }
-}
 
-//funcion para eliminar usuario//
-onEditUser(userToEdit: User):void{
-  const dialogRef = this.matDialog.open(UserFormDialogComponent,{
-    data:userToEdit
-  })
+  onCreateUser(): void {
+    this.matDialog
+      // ABRO EL MODAL
+      .open(UserFormDialogComponent)
+      // Y DESPUES DE QUE CIERRE
+      .afterClosed()
+      // HAGO ESTO...
+      .subscribe({
+        next: (v) => {
+          if (v) {
+            this.userService.createUser({
+              id:v.id,
+              name: v.name,
+              email: v.email,
+              password: v.password,
+              surname: v.surname,
+            });
+          }
+        },
+      });
+  }
 
+  onDeleteUser(userToDelete: User): void {
+    if (confirm(`¿Está seguro de eliminar a ${userToDelete.name}?`)) {
+      this.userService.deleteUserById(userToDelete.id);
+    }
+  }
 
- dialogRef.afterClosed().subscribe({
-  next:(userUpdated) =>{
-   
-   if (userUpdated){ 
-    this.users= this.users.map((user)=>{
-
-      return user.id === userToEdit.id
-       ? {...user, ...userUpdated}
-       : user
-    })
-   }
-     }
-   })
+  onEditUser(userToEdit: User): void {
+    this.matDialog
+      // ABRO EL MODAL
+      .open(UserFormDialogComponent, {
+        // LE ENVIO AL MODAL, EL USUARIO QUE QUIERO EDITAR
+        data: userToEdit,
+      })
+      // Y DESPUES DE QUE CIERRE
+      .afterClosed()
+      // HAGO ESTO...
+      .subscribe({
+        next: (userUpdated) => {
+          if (userUpdated) {
+            this.userService.updateUserById(userToEdit.id, userUpdated);
+          }
+        },
+      });
   }
 }
