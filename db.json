@@ -17,11 +17,18 @@
     },
     {
       "name": "lolo",
+      "surname": "lelele",
       "email": "villegasgustavoopel@hotmail.com",
       "password": "tomasa1679",
-      "surname": "lelele",
-      "token": "eMwgNW5utID1rOPiO5Ia",
       "id": 3
+    },
+    {
+      "name": "Gabriel",
+      "email": "Gabr@hotmail.com",
+      "password": "123456",
+      "surname": "Hernandel",
+      "token": "BBGpxqkgXBbVBJRY4Bm2",
+      "id": 4
     }
   ],
   "products": []
