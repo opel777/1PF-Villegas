@@ -31,5 +31,29 @@
       "id": 4
     }
   ],
-  "products": []
+  "cursos": [
+    {
+      "id": 1,
+      "logo": "logo.png",
+      "name": "Bases de Datos",
+      "description": "lorem ipsum"
+    },
+    {
+      "id": 2,
+      "logo": "logo.png",
+      "name": "Bases de Datos",
+      "description": "lorem ipsum"
+    },
+    {
+      "id": 3,
+      "logo": "logo.png",
+      "name": "Bases de Datos",
+      "description": "lorem ipsum"
+    },
+    {
+      "name": "otrabase",
+      "description": "datoscompani unandndllllll",
+      "id": 4
+    }
+  ]
 }

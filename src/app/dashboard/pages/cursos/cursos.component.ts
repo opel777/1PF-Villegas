@@ -1,32 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Cursos } from './model';
 import { MatDialog } from '@angular/material/dialog';
 import { CursosFormDialogComponent } from './components/cursos-form-dialog/cursos-form-dialog.component';
+import { CursosService } from './cursos.service';
+import { Observable, Subject } from 'rxjs';
 
-const ELEMENT_DATA: Cursos[] = [
-  {
-    id:1,
-    logo:'logo.png',
-    name:'Bases de Datos',
-    description:'lorem ipsum ',
-    
-  },
-  {
-    id:2,
-    logo:'logo.png',
-    name:'Bases de Datos',
-    description:'lorem ipsum ',
-    
-  },
-  {
-    id:3,
-    logo:'logo.png',
-    name:'Bases de Datos',
-    description:'lorem ipsum ',
-    
-  }
-  
-];
 
 @Component({
   selector: 'app-cursos',
@@ -34,60 +12,65 @@ const ELEMENT_DATA: Cursos[] = [
   styleUrls: ['./cursos.component.scss']
 })
 
-export class CursosComponent {
-  public users:Cursos[]=ELEMENT_DATA;
-  constructor(
-    private matDialog: MatDialog
-  ){}
-  
-  
-  //funcion para crear usuario//
-  onCreateCursos():void{
-   const dialogRef = this.matDialog.open(CursosFormDialogComponent);
-   dialogRef.afterClosed().subscribe({
-    next:(newStudent) =>{
-      if(newStudent){
-  
-        this.users=[
-          ...this.users,
-  { id:this.users.length + 1,
-    logo:newStudent.logo,
-    name: newStudent.name,
-    description:newStudent.description,
-    
-    },
-        ];  
-      }  
-    }
-   })
+export class CursosComponent implements OnDestroy{
+  public cursos: Observable<Cursos[]>;
+  public isLoading$: Observable<boolean>;
+  public destroyed = new Subject<boolean>();
+
+  public loading = false;
+  constructor(private matDialog: MatDialog, private cursosService: CursosService) {
+    this.cursosService.loadCursos();
+    this.isLoading$ = this.cursosService.isLoading$;
+    this.cursos = this.cursosService.getCursos();
+  }
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
   }
   
-  //funcion para eliminar usuario//
-  onDeleteCursos(userToDelete:Cursos):void{
-    if(confirm(`Esta seguro de Eliminar a ${userToDelete.name}`)){
-    this.users = this.users.filter((u)=> u.id !==userToDelete.id)
+  
+  onCreateCursos(): void {
+    this.matDialog
+      // ABRO EL MODAL
+      .open(CursosFormDialogComponent)
+      // Y DESPUES DE QUE CIERRE
+      .afterClosed()
+      // HAGO ESTO...
+      .subscribe({
+        next: (v) => {
+          if (v) {
+            this.cursosService.createCursos({
+              id:v.id,
+              logo:v.logo,
+              name:v.name,
+              description:v.description,
+            });
+          }
+        },
+      });
+  }
+
+  onDeleteCursos(cursosToDelete: Cursos): void {
+    if (confirm(`¿Está seguro de eliminar a ${cursosToDelete.name}?`)) {
+      this.cursosService.deleteCursosById(cursosToDelete.id);
     }
   }
-  
-  //funcion para editar usuario//
-  onEditCursos(userToEdit: Cursos):void{
-    const dialogRef = this.matDialog.open(CursosFormDialogComponent,{
-      data:userToEdit
-    })
-  
-  
-   dialogRef.afterClosed().subscribe({
-    next:(userUpdated) =>{
-     
-     if (userUpdated){ 
-      this.users= this.users.map((user)=>{
-  
-        return user.id === userToEdit.id
-         ? {...user, ...userUpdated}
-         : user
+
+  onEditCursos(cursosToEdit: Cursos): void {
+    this.matDialog
+      // ABRO EL MODAL
+      .open(CursosFormDialogComponent, {
+        // LE ENVIO AL MODAL, EL USUARIO QUE QUIERO EDITAR
+        data: cursosToEdit,
       })
-     }
-       }
-     })
-    }
+      // Y DESPUES DE QUE CIERRE
+      .afterClosed()
+      // HAGO ESTO...
+      .subscribe({
+        next: (cursosUpdated) => {
+          if (cursosUpdated) {
+            this.cursosService.updateCursosById(cursosToEdit.id, cursosUpdated);
+          }
+        },
+      });
+  }
 }

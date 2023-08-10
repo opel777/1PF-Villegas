@@ -39,7 +39,7 @@ editingUser?:User;
     onSubmit():void{
       // alert(JSON.stringify(this.userForm.value))
       if(this.userForm.invalid){
-        this,this.userForm.markAllAsTouched()
+        this.userForm.markAllAsTouched()
       } else {
         this.dialogRef.close(this.userForm.value);
       }
