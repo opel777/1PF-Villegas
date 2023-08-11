@@ -1,17 +1,41 @@
 
-<h1 mat-dialog-title>{{editingCurso ? "Editando a " + editingCurso.name + " " :"Creando Curso"}}</h1>
+<h1 mat-dialog-title>{{editingCurso ? "Editando a " + editingCurso.title + " " :"Creando Curso"}}</h1>
 <div mat-dialog-content>
 <form [formGroup]="cursosForm" class="grid">
     <div class="field-row">
+        <div class="field col-6 p-1">
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>logo</mat-label>
+                <input formControlName="image" matInput  placeholder="image" type="text" name="name"/>
+                <mat-error *ngIf="imageControl.hasError('required')">
+                    Este campo es Requerido.
+                </mat-error>
+                <mat-error *ngIf="imageControl.hasError('minlength')">
+                    Este campo debe tener al menos {{imageControl.errors?.['minlength']?.requiredLength}} letras
+                </mat-error>
+            </mat-form-field>
+        </div>
     <div class="field col-6 p-1">
         <mat-form-field class="w-100" appearance="outline">
-            <mat-label>Nombre clase</mat-label>
-            <input formControlName="name" matInput  placeholder="Name" type="text" name="name"/>
-            <mat-error *ngIf="nameControl.hasError('required')">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="title" matInput  placeholder="Nombre" type="text" name="name"/>
+            <mat-error *ngIf="titleControl.hasError('required')">
                 Este campo es Requerido.
             </mat-error>
-            <mat-error *ngIf="nameControl.hasError('minlength')">
-                Este campo debe tener al menos {{nameControl.errors?.['minlength']?.requiredLength}} letras
+            <mat-error *ngIf="titleControl.hasError('minlength')">
+                Este campo debe tener al menos {{titleControl.errors?.['minlength']?.requiredLength}} letras
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="field col-6 p-1">
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Nombre Curso</mat-label>
+            <input formControlName="subtitle" matInput  placeholder="Nombre del curso" type="text" name="name"/>
+            <mat-error *ngIf="subtitleControl.hasError('required')">
+                Este campo es Requerido.
+            </mat-error>
+            <mat-error *ngIf="subtitleControl.hasError('minlength')">
+                Este campo debe tener al menos {{subtitleControl.errors?.['minlength']?.requiredLength}} letras
             </mat-error>
         </mat-form-field>
     </div>

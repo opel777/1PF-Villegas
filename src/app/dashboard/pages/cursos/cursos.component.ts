@@ -24,7 +24,7 @@ export class CursosComponent implements OnDestroy{
     this.cursos = this.cursosService.getCursos();
   }
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+    
   }
   
   
@@ -50,7 +50,7 @@ export class CursosComponent implements OnDestroy{
   }
 
   onDeleteCursos(cursosToDelete: Cursos): void {
-    if (confirm(`¿Está seguro de eliminar a ${cursosToDelete.name}?`)) {
+    if (confirm(`¿Está seguro de eliminar a ${cursosToDelete.title}?`)) {
       this.cursosService.deleteCursosById(cursosToDelete.id);
     }
   }

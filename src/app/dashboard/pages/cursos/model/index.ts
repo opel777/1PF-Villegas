@@ -1,7 +1,8 @@
 export interface Cursos{
     id: number;
-    logo:string;
-    name:string;
+    image:string;
+    title:string;
+    subtitle:string;
     description:string;
     
 }

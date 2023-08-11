@@ -11,13 +11,17 @@ import { Cursos } from '../../model';
 })
 export class CursosFormDialogComponent {
   editingCurso?:Cursos;
-  nameControl = new FormControl<string | null>(null,[Validators.required,Validators.minLength(2)]);
+  imageControl = new FormControl<string | null>(null,[Validators.required,Validators.minLength(2)]);
+  titleControl = new FormControl<string | null>(null,[Validators.required,Validators.minLength(2)]);
+  subtitleControl = new FormControl<string | null>(null,[Validators.required,Validators.minLength(2)]);
   descriptionControl = new FormControl<string | null>(null,[Validators.required,Validators.minLength(2)]);
   
   
   
     cursosForm = new FormGroup({
-       name: this.nameControl,
+       image:this.imageControl,
+       title: this.titleControl,
+       subtitle:this.subtitleControl,
        description: this.descriptionControl,
       
     });
@@ -27,7 +31,9 @@ export class CursosFormDialogComponent {
     ){
       if(this.data){
         this.editingCurso = this.data;
-        this.nameControl.setValue(this.data.name);
+        this.imageControl.setValue(this.data.image);
+        this.titleControl.setValue(this.data.title);
+        this.subtitleControl.setValue(this.data.subtitle);
         this.descriptionControl.setValue(this.data.description);
       
       }

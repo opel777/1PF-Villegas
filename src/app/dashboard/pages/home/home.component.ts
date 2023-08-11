@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Cursos } from '../cursos/model';
+import { CursosService } from '../cursos/cursos.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  cursos: Cursos[] = [];
+
+  constructor(private cursosService: CursosService) { }
+
+  ngOnInit(): void {
+    this.cursosService.loadCursos()
+    this.cursosService.getCursos().subscribe(cursos => {
+      this.cursos = cursos;
+    });
+  }
 
 }
+
+
+
+

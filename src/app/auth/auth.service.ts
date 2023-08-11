@@ -27,7 +27,7 @@ export class AuthService {
 
     if (payLoad.email === MOCK_USER.email && payLoad.password === MOCK_USER.password) {
       this._authUser$.next(MOCK_USER);
-      this.router.navigate(['/dashboard']); // Navegación aquí dentro del servicio
+      this.router.navigate(['/dashboard/home']); // Navegación aquí dentro del servicio
     } else {
       this.notifier.showError('Email o Contraseña invalida');
       this._authUser$.next(null);

@@ -33,27 +33,67 @@
   ],
   "cursos": [
     {
-      "id": 1,
-      "logo": "logo.png",
-      "name": "Bases de Datos",
-      "description": "lorem ipsum"
+      "id": 5,
+      "title": "Angular",
+      "subtitle": "Curso Angular",
+      "image": "https://openclipart.org/image/2400px/svg_to_png/272339/angular.png",
+      "description": "Angular es una plataforma para crear aplicaciones de escritorio web y móviles. Únete a la comunidad de millones de desarrolladores que crean interfaces de usuario atractivas con Angular."
     },
     {
-      "id": 2,
-      "logo": "logo.png",
-      "name": "Bases de Datos",
-      "description": "lorem ipsum"
+      "id": 6,
+      "title": "JavaScript",
+      "subtitle": "Curso JavaScript",
+      "image": "https://www.javilazaro.es/wp-content/uploads/2019/02/Javascript-logo-basico-946x1024.png",
+      "description": "JavaScript es un lenguaje de secuencias de comandos que te permite crear contenido de actualización dinámica, controlar multimedia, animar imágenes y prácticamente todo lo demás."
     },
     {
-      "id": 3,
-      "logo": "logo.png",
-      "name": "Bases de Datos",
-      "description": "lorem ipsum"
+      "id": 7,
+      "title": "HTML, CSS y JavaScript",
+      "subtitle": "Curso Desarrollo Web",
+      "image": "https://miro.medium.com/v2/resize:fit:8400/1*kUcnzFjf1UJBKHE8oj5c6g.jpeg",
+      "description": "Bienvenido al curso de desarrollo web con HTML, CSS y JavaScript (para principiantes), en el que vas a aprender paso a paso las bases del desarrollo web con estos lenguajes desde cero."
     },
     {
-      "name": "otrabase",
-      "description": "datoscompani unandndllllll",
-      "id": 4
+      "id": 8,
+      "title": "Java",
+      "subtitle": "Curso Java",
+      "image": "https://www.socwall.com/images/wallpapers/7748-1920x1200.jpg",
+      "description": "Java es una plataforma informática de lenguaje de programación creada por Sun Microsystems en 1995. Ha evolucionado desde sus humildes comienzos hasta impulsar una gran parte del mundo."
+    },
+    {
+      "id": 9,
+      "title": "Python",
+      "subtitle": "Curso Python",
+      "image": "https://blog.desdelinux.net/wp-content/uploads/2015/08/zen-of-python.png",
+      "description": "Python es un lenguaje de programación que te permite trabajar más rápido e integrar tus sistemas de manera más eficiente. Es fácil de aprender y poderoso al mismo tiempo."
+    },
+    {
+      "id": 10,
+      "title": "MySQL",
+      "subtitle": "Curso MySQL",
+      "image": "https://bigdataanalyticsnews.com/wp-content/uploads/2019/05/mysqlhero.jpg",
+      "description": "MySQL es un sistema de gestión de bases de datos relacional de código abierto. Es ampliamente utilizado en aplicaciones web y es una opción popular para el desarrollo de bases de datos."
+    },
+    {
+      "id": 11,
+      "title": "React",
+      "subtitle": "Curso React",
+      "image": "https://www.tuannguyen.tech/wp-content/uploads/2019/01/react.png",
+      "description": "React es una biblioteca de JavaScript de código abierto para construir interfaces de usuario. Es mantenido por Facebook y una comunidad de desarrolladores individuales y empresas."
+    },
+    {
+      "image": "https://niixer.com/wp-content/uploads/2020/11/csharp-1-800x445.jpg",
+      "title": "C#?",
+      "subtitle": "Curso C#",
+      "description": "C# es un lenguaje de programación orientado a objetos desarrollado por Microsoft. Es ampliamente utilizado para el desarrollo de aplicaciones en la plataforma .NET.",
+      "id": 12
+    },
+    {
+      "image": "https://logos-world.net/wp-content/uploads/2021/02/Docker-Symbol.png",
+      "title": "docker",
+      "subtitle": "docker",
+      "description": "Aprenderás el motivo por el cual Docker es una de las herramientas más usadas en el entorno de desarrollo",
+      "id": 13
     }
   ]
 }
