@@ -40,8 +40,9 @@ export class CursosComponent implements OnDestroy{
           if (v) {
             this.cursosService.createCursos({
               id:v.id,
-              logo:v.logo,
-              name:v.name,
+              image:v.image,
+              title:v.title,
+              subtitle:v.subtitle,
               description:v.description,
             });
           }

@@ -7,6 +7,13 @@ import { AuthGuard } from './core/guards/auth.guard';
 const routes: Routes = [
 
   {
+
+    path:'',
+    redirectTo:'auth',
+    pathMatch: 'full'
+
+  },
+  {
     path:'dashboard',
     canActivate:[AuthGuard],
     component:DashboardComponent,
@@ -21,7 +28,7 @@ const routes: Routes = [
 
   {
     path:'**',
-    redirectTo:'auth',
+    redirectTo:'404-notFound',
   },
 
     

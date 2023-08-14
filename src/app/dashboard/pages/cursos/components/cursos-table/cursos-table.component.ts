@@ -7,7 +7,7 @@ import { Cursos } from '../../model';
   styleUrls: ['./cursos-table.component.scss']
 })
 export class CursosTableComponent {
-  displayedColumns: string[] = ['id', 'image','tittle','subtittle', 'description','actions'];
+  displayedColumns: string[] = ['id', 'image','title','subtitle', 'description','actions'];
   @Input()
   dataSource: Cursos[]= [];
 

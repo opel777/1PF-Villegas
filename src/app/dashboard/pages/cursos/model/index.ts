@@ -9,14 +9,16 @@ export interface Cursos{
 
 export interface CreateCursosData{
     id: number;
-    logo:string;
-    name:string;
+    image:string;
+    title:string;
+    subtitle:string;
     description:string;
 }
 
 export interface UpdateCursosData{
     id?: number;
-    logo?:string;
-    name?:string;
+    image?:string;
+    title?:string;
+    subtitle?:string;
     description?:string;
 }

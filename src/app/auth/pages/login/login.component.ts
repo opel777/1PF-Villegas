@@ -21,7 +21,7 @@ export class LoginComponent {
   
   constructor(private authService: AuthService, private router: Router, private activatedRoute: ActivatedRoute) {}
   logout(): void{
-    this.router.navigate(['./dashboard','home'],{
+    this.router.navigate(['/dashboard','home'],{
       // relativeTo: this.activatedRoute,
     })
   }
