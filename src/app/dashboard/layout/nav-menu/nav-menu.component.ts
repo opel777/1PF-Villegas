@@ -10,7 +10,7 @@ export class NavMenuComponent {
   constructor(private router: Router, private activatedRoute:ActivatedRoute){}
     logout(): void{
       this.router.navigate(['auth','login'],{
-        // relativeTo: this.activatedRoute,
+        
       })
     }
   

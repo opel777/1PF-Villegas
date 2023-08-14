@@ -32,7 +32,7 @@ export class ClasesFormDialogComponent {
       }
   }
     onSubmit():void{
-      // alert(JSON.stringify(this.userForm.value))
+     
       if(this.clasesForm.invalid){
         this.clasesForm.markAllAsTouched()
       } else {
