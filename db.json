@@ -5,7 +5,8 @@
       "name": "Gustavo",
       "surname": "villegas",
       "email": "villegas@mail.com",
-      "password": "123456"
+      "password": "123456",
+      "token": "6DHvGBS08Z6UdrMM10ac"
     },
     {
       "name": "gustavoooo",
@@ -20,6 +21,7 @@
       "surname": "lelele",
       "email": "villegasgustavoopel@hotmail.com",
       "password": "tomasa1679",
+      "token": "7DHvGBSO7Z6UdrMM10hd",
       "id": 3
     },
     {
@@ -29,6 +31,22 @@
       "surname": "Hernandel",
       "token": "BBGpxqkgXBbVBJRY4Bm2",
       "id": 4
+    },
+    {
+      "name": "Omar",
+      "email": "Omar@mail.com",
+      "password": "123456",
+      "surname": "Tirado",
+      "token": "7DHvGBSO7Z6UdrMM10ac",
+      "id": 5
+    },
+    {
+      "name": "carlos",
+      "email": "carlos@mail.com",
+      "password": "123456",
+      "surname": "gonzales",
+      "token": "mqvMKs0rHw26gkI1AFSk",
+      "id": 6
     }
   ],
   "cursos": [
@@ -94,14 +112,6 @@
       "subtitle": "docker",
       "description": "Aprenderás el motivo por el cual Docker es una de las herramientas más usadas en el entorno de desarrollo",
       "id": 13
-    },
-    {
-      "image": "dddd",
-      "title": "gggg",
-      "subtitle": "ffff",
-      "description": "hhhhh",
-      "token": "AUGJDrXEm4X3E6o9hKck",
-      "id": 14
     }
   ]
 }

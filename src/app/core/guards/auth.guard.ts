@@ -1,4 +1,4 @@
-import { CanActivateFn, Router, UrlTree } from '@angular/router';
+import { Router, UrlTree } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service'; 
 import { Injectable } from '@angular/core';

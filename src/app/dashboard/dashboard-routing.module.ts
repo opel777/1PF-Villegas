@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
+
 
 
 
@@ -10,8 +10,9 @@ import { HomeComponent } from './pages/home/home.component';
             
       {
         path:'home',
-        component:HomeComponent,
+        loadChildren:()=> import('./pages/home/home.module').then((m)=>m.HomeModule)
       },
+
       {
         path:'users',
         loadChildren:()=> import('./pages/users/users.module').then((m)=>m.UsersModule)
@@ -31,7 +32,7 @@ import { HomeComponent } from './pages/home/home.component';
       {
         path:'**',
         redirectTo:'home',
-      },
+      }
     ])
     ],
     exports: [RouterModule]
