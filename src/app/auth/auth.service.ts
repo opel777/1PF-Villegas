@@ -6,6 +6,7 @@ import { NotifierService } from "../core/services/notifier.service";
 import { Router } from "@angular/router"; // Asegúrate de que la ruta sea correcta
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from "src/environments/environment";
+import { Token } from "@angular/compiler";
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -15,18 +16,29 @@ export class AuthService {
   constructor(private notifier: NotifierService, private router: Router, private HttpClient: HttpClient) {}
 
   isAutenticated(): Observable<boolean> {
-    return this.authUser$.pipe(take(1), map((user) => !!user));
+    // return this.authUser$.pipe(take(1), map((user) => !!user));
+    return this.HttpClient.get<User[]>(environment.baseApiUrl + '/users',{
+      params:{
+        token:localStorage.getItem('token') || '',
+      }
+    }).pipe(map((usersResult)=>{
+      return !!usersResult.length
+    }))
   }
 
   login(payLoad: LoginPayload): void {
-   this.HttpClient.get<User[]>(environment.baseApiUrl + '/cursos',{params:{
+   this.HttpClient.get<User[]>(environment.baseApiUrl + '/users',{params:{
     email:payLoad.email || '',
     password:payLoad.password || ''
    }}).subscribe({
     next:(response)=>{
       if (response.length) {
-        this._authUser$.next(response[0]);
-        this.router.navigate(['/dashboard/home']); // Navegación aquí dentro del servicio
+        const authUser = response[0];
+        this._authUser$.next(authUser);
+        this.router.navigate(['/dashboard/home']); 
+        localStorage.setItem('token', authUser.token);
+    
+        
       } else {
         this.notifier.showError('Email o Contraseña invalida');
         this._authUser$.next(null);
