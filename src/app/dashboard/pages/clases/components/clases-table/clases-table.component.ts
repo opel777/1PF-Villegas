@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Materia } from '../../model';
+import {  Materia } from '../../model';
 
 @Component({
   selector: 'app-clases-table',

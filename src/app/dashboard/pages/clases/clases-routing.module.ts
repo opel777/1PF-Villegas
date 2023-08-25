@@ -14,10 +14,10 @@ import { ClasesDetailComponent } from "./pages/clases-detail/clases-detail.compo
                 component:ClasesComponent,
               },
             {
-                path:'cursos/:id',
+                path:'clases/:id',
                 component:ClasesDetailComponent,
               },
         ])
     ]
 })
-export class CursosRoutingModule{}
+export class ClasesRoutingModule{}

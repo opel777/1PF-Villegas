@@ -79,11 +79,11 @@
       "description": "Java es una plataforma informática de lenguaje de programación creada por Sun Microsystems en 1995. Ha evolucionado desde sus humildes comienzos hasta impulsar una gran parte del mundo."
     },
     {
-      "id": 9,
+      "image": "https://www.alertadigital.com/wp-content/uploads/2020/08/python-1024x634.jpg",
       "title": "Python",
       "subtitle": "Curso Python",
-      "image": "https://blog.desdelinux.net/wp-content/uploads/2015/08/zen-of-python.png",
-      "description": "Python es un lenguaje de programación que te permite trabajar más rápido e integrar tus sistemas de manera más eficiente. Es fácil de aprender y poderoso al mismo tiempo."
+      "description": "Python es un lenguaje de programación que te permite trabajar más rápido e integrar tus sistemas de manera más eficiente. Es fácil de aprender y poderoso al mismo tiempo.",
+      "id": 9
     },
     {
       "id": 10,
@@ -112,6 +112,91 @@
       "subtitle": "docker",
       "description": "Aprenderás el motivo por el cual Docker es una de las herramientas más usadas en el entorno de desarrollo",
       "id": 13
+    }
+  ],
+  "materias": [
+    {
+      "id": 1,
+      "name": "Bases de Datos",
+      "nameteacher": "Prof. Jose Perez"
+    },
+    {
+      "id": 2,
+      "name": "Sql",
+      "nameteacher": "Prof. Juan Rodriguez"
+    },
+    {
+      "name": "Ruby",
+      "nameteacher": "Prof. Alejandro Bolivar",
+      "id": 3
+    },
+    {
+      "name": "patron de diseno",
+      "nameteacher": "prof. miguel",
+      "token": "sTM1d2Cr2nScCwOqYUFr",
+      "id": 4
+    },
+    {
+      "name": "adrfgdsfgh",
+      "nameteacher": "hsdfgdf",
+      "token": "hRF5dZvB7axE8q4RyW28",
+      "id": 5
+    }
+  ],
+  "alumnos": [
+    {
+      "id": 1,
+      "name": "Gustavo",
+      "surname": "villegas",
+      "email": "villegas@mail.com",
+      "password": "123456",
+      "token": "6DHvGBS08Z6UdrMM10ac"
+    },
+    {
+      "name": "gustavoooo",
+      "email": "villegasgustavoopel@hotmail.com",
+      "password": "tomasa1679",
+      "surname": "pepepelocuas",
+      "token": "Ttc3saCUpFZxSfww1qST",
+      "id": 2
+    },
+    {
+      "name": "lolo",
+      "surname": "lelele",
+      "email": "villegasgustavoopel@hotmail.com",
+      "password": "tomasa1679",
+      "token": "7DHvGBSO7Z6UdrMM10hd",
+      "id": 3
+    },
+    {
+      "name": "Gabriel",
+      "email": "Gabr@hotmail.com",
+      "password": "123456",
+      "surname": "Hernandel",
+      "token": "BBGpxqkgXBbVBJRY4Bm2",
+      "id": 4
+    },
+    {
+      "name": "Omar",
+      "email": "Omar@mail.com",
+      "password": "123456",
+      "surname": "Tirado",
+      "token": "7DHvGBSO7Z6UdrMM10ac",
+      "id": 5
+    },
+    {
+      "name": "carlos",
+      "surname": "gonzaless",
+      "email": "carlos@mail.com",
+      "password": "123456",
+      "id": 6
+    },
+    {
+      "name": "miguel",
+      "surname": "Toledo",
+      "email": "toledo@mail.com",
+      "token": "gpuCpU9Vatipot5swsGN",
+      "id": 7
     }
   ]
 }

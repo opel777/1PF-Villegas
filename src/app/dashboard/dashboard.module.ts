@@ -15,6 +15,8 @@ import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 import { ClasesModule } from './pages/clases/clases.module';
 import { CursosModule } from './pages/cursos/cursos.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { AlumnosModule } from './pages/alumnos/alumnos.module';
+
 
 
 
@@ -25,6 +27,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     DashboardComponent,
     NavMenuComponent,
     ToolbarComponent,
+    
    
    
   ],
@@ -42,6 +45,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     ClasesModule,
     CursosModule,
     DashboardRoutingModule,
+    AlumnosModule
    
     
     

@@ -1,0 +1,66 @@
+<h1 mat-dialog-title>{{editingAlumno ? "Editando a " + editingAlumno.name + " " + editingAlumno.surname :"Creando Usuario"}}</h1>
+<div mat-dialog-content>
+<form [formGroup]="alumnoForm" class="grid">
+    <div class="field-row">
+    <div class="field col-6 p-1">
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="name" matInput  placeholder="Name" type="text" name="name"/>
+            <mat-error *ngIf="nameControl.hasError('required')">
+                Este campo es Requerido
+            </mat-error>
+            <mat-error *ngIf="nameControl.hasError('minlength')">
+                Este campo debe tener al menos {{nameControl.errors?.['minlength']?.requiredLength}} letras
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="field col-6 p-1" >
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Apellido</mat-label>
+            <input formControlName="surname" matInput placeholder="Surname" type="text" name="surname">
+            <mat-error *ngIf="surnameControl.hasError('required')">
+                Este campo es Requerido
+            </mat-error>
+            <mat-error *ngIf="surnameControl.hasError('minlength')">
+                Este campo debe tener al menos {{surnameControl.errors?.['minlength']?.requiredLength}} letras
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+</div> 
+<div class="field-row">
+    <div class="field col-6 p-1">
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput placeholder="Email" type="email" name="email">
+            <mat-error *ngIf="emailControl.hasError('required')">
+                Este campo es Requerido
+            </mat-error>
+            <mat-error *ngIf="emailControl.hasError('pattern')">
+                Este campo debe ser tipo mail@tumail.com 
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="field col-6 p-1">
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput placeholder="Password" type="password" name="password">
+            <mat-error *ngIf="passwordControl.hasError('required')">
+                Este campo es Requerido
+            </mat-error>
+            <mat-error *ngIf="passwordControl.hasError('pattern')">
+                Este campo debe ser tipo  
+            </mat-error>
+        </mat-form-field>
+    </div>
+</div>
+</form>
+</div>
+<div mat-dialog-actions>
+<button mat-button mat-dialog-close>Cancelar</button>
+<button (click)="onSubmit()" type="submit" mat-button>Guardar</button>
+</div>
+
+
+

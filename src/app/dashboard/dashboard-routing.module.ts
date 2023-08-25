@@ -28,6 +28,10 @@ import { RouterModule } from '@angular/router';
         path:'clases',
         loadChildren:()=> import('./pages/clases/clases.module').then((m)=>m.ClasesModule)
       },
+      {
+        path:'alumnos',
+        loadChildren:()=> import('./pages/alumnos/alumnos.module').then((m)=>m.AlumnosModule)
+      },
       
       {
         path:'**',

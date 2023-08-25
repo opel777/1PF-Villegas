@@ -1,0 +1,41 @@
+<table>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef><span appSizeTittle> Id</span></th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="fullName">
+          <th mat-header-cell *matHeaderCellDef><span appSizeTittle> Nombre Completo</span></th>
+          <td mat-cell *matCellDef="let element"> {{element | fullName}} </td>
+        </ng-container>
+      
+     
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef><span appSizeTittle> Email</span> </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef><span appSizeTittle> Acciones</span> </th>
+          <td mat-cell *matCellDef="let element"> 
+            <button [routerLink]="['/dashboard/alumnos', element.id]" mat-icon-button >
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button (click)="editAlumno.emit(element)" mat-icon-button >
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="deleteAlumno.emit(element)" mat-icon-button color="warn">
+              <mat-icon>delete</mat-icon>
+             </button>
+          </td>
+          
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      
+</table>

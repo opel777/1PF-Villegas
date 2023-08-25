@@ -2,10 +2,12 @@
 
 <h1><span appSizeTittle>Listado de Clases</span></h1>
 
-<app-clases-table [dataSource]="users" (deleteMateria)="onDeleteMateria($event)" (editMateria)="onEditMateria($event)"></app-clases-table>
+<app-clases-table [dataSource]="(clases | async) || []" 
+(deleteMateria)="onDeleteClase($event)" 
+(editMateria)="onEditClase($event)"></app-clases-table>
 
 <div class="mb-5 p-3" >
-    <button (click)="onCreateMateria()" mat-flat-button color="primary" type="button">
+    <button (click)="onCreateClase()" mat-flat-button color="primary" type="button">
      <mat-icon>add</mat-icon>
         Crear clase
     </button>

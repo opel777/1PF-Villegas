@@ -1,85 +1,77 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ClasesFormDialogComponent } from './components/clases-form-dialog/clases-form-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable, Subject } from 'rxjs';
+import { ClasesService } from './clases.service';
 import { Materia } from './model';
-const ELEMENT_DATA: Materia[] = [
-  {
-    id:1,
-    name:'Bases de Datos',
-    nameteacher:'Prof. Jose Perez',
-    
-  },
-  {
-    id:2,
-    name:'Sql',
-    nameteacher:'Prof. Juan Rodriguez',
-    
-  },
-  {
-    id:3,
-    name:'Ruby',
-    nameteacher:'Prof. Alejandro Bolivar',
-  
-  }
-];
+
+
 @Component({
   selector: 'app-clases',
   templateUrl: './clases.component.html',
   styleUrls: ['./clases.component.scss']
 })
-export class ClasesComponent {
-  public users:Materia[]=ELEMENT_DATA;
-  constructor(
-    private matDialog: MatDialog
-  ){}
-  
-  
-  //funcion para crear usuario//
-  onCreateMateria():void{
-   const dialogRef = this.matDialog.open(ClasesFormDialogComponent);
-   dialogRef.afterClosed().subscribe({
-    next:(newStudent) =>{
-      if(newStudent){
-  
-        this.users=[
-          ...this.users,
-  { id:this.users.length + 1,
-    name: newStudent.name,
-    nameteacher:newStudent.nameteacher,
+export class ClasesComponent implements OnDestroy {
+  public clases: Observable<Materia[]>;
+  public isLoading$: Observable<boolean>;
+  public destroyed = new Subject<boolean>();
+
+  public loading = false;
+  constructor(private matDialog: MatDialog, private clasesService: ClasesService) {
+    this.clasesService.loadClase();
+    this.isLoading$ = this.clasesService.isLoading$;
+    this.clases = this.clasesService.getClase();
+  }
+  ngOnDestroy(): void {
     
-    },
-        ];  
-      }  
-    }
-   })
   }
   
-  //funcion para eliminar usuario//
-  onDeleteMateria(userToDelete:Materia):void{
-    if(confirm(`Esta seguro de Eliminar a ${userToDelete.name}`)){
-    this.users = this.users.filter((u)=> u.id !==userToDelete.id)
+
+  onCreateClase():void{
+    this.matDialog
+    // ABRO EL MODAL
+    .open(ClasesFormDialogComponent)
+    // Y DESPUES DE QUE CIERRE
+    .afterClosed()
+    // HAGO ESTO...
+    .subscribe({
+      next: (v) => {
+        if (v) {
+          this.clasesService.createClase({
+            id:v.id,
+            name:v.name,
+            nameteacher:v.nameteacher,
+       
+          });
+        }
+      },
+    });
+  }
+  
+  //funcion para eliminar //
+  onDeleteClase(claseToDelete: Materia): void{
+    if (confirm(`¿Está seguro de eliminar a ${claseToDelete.name}?`)) {
+      this.clasesService.deleteClaseById(claseToDelete.id);
     }
   }
   
-  //funcion para editar usuario//
-  onEditMateria(userToEdit: Materia):void{
-    const dialogRef = this.matDialog.open(ClasesFormDialogComponent,{
-      data:userToEdit
+  //funcion para editar //
+  onEditClase(claseToEdit: Materia):void{
+    this.matDialog
+    // ABRO EL MODAL
+    .open(ClasesFormDialogComponent, {
+      // LE ENVIO AL MODAL, EL USUARIO QUE QUIERO EDITAR
+      data: claseToEdit,
     })
-  
-  
-   dialogRef.afterClosed().subscribe({
-    next:(userUpdated) =>{
-     
-     if (userUpdated){ 
-      this.users= this.users.map((user)=>{
-  
-        return user.id === userToEdit.id
-         ? {...user, ...userUpdated}
-         : user
-      })
-     }
-       }
-     })
-    }
+    // Y DESPUES DE QUE CIERRE
+    .afterClosed()
+    // HAGO ESTO...
+    .subscribe({
+      next: (clasesUpdated) => {
+        if (clasesUpdated) {
+          this.clasesService.updateClaseById(claseToEdit.id, clasesUpdated);
+        }
+      },
+    });
+}
 }
