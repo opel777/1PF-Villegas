@@ -11,6 +11,7 @@ import { NotifierService } from 'src/app/core/services/notifier.service';
 export class AlumnosDetailComponent {
   public alumno:Alumno|null=null
 constructor(private ActivatedRoute:ActivatedRoute,private router:Router,private notification:NotifierService){
+  console.log('AlumnosDetailComponent constructor');
   console.log(this.ActivatedRoute.snapshot.params['id']),
   console.log(this.ActivatedRoute.snapshot.paramMap.get('id'))
   if(!Number(this.ActivatedRoute.snapshot.params['id'])){

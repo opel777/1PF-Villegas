@@ -28,8 +28,7 @@ import { ClasesRoutingModule } from './clases-routing.module';
     FormsModule,
     ReactiveFormsModule,
     ClasesRoutingModule
-    
-    
+     
   ]
 })
 export class ClasesModule { }

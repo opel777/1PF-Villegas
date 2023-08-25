@@ -145,58 +145,11 @@
   ],
   "alumnos": [
     {
-      "id": 1,
-      "name": "Gustavo",
-      "surname": "villegas",
-      "email": "villegas@mail.com",
-      "password": "123456",
-      "token": "6DHvGBS08Z6UdrMM10ac"
-    },
-    {
-      "name": "gustavoooo",
-      "email": "villegasgustavoopel@hotmail.com",
-      "password": "tomasa1679",
-      "surname": "pepepelocuas",
-      "token": "Ttc3saCUpFZxSfww1qST",
+      "name": "jose",
+      "surname": "martinez",
+      "email": "martinez@mail.com",
+      "token": "gFLk6rTqUdJx0B8yixHz",
       "id": 2
-    },
-    {
-      "name": "lolo",
-      "surname": "lelele",
-      "email": "villegasgustavoopel@hotmail.com",
-      "password": "tomasa1679",
-      "token": "7DHvGBSO7Z6UdrMM10hd",
-      "id": 3
-    },
-    {
-      "name": "Gabriel",
-      "email": "Gabr@hotmail.com",
-      "password": "123456",
-      "surname": "Hernandel",
-      "token": "BBGpxqkgXBbVBJRY4Bm2",
-      "id": 4
-    },
-    {
-      "name": "Omar",
-      "email": "Omar@mail.com",
-      "password": "123456",
-      "surname": "Tirado",
-      "token": "7DHvGBSO7Z6UdrMM10ac",
-      "id": 5
-    },
-    {
-      "name": "carlos",
-      "surname": "gonzaless",
-      "email": "carlos@mail.com",
-      "password": "123456",
-      "id": 6
-    },
-    {
-      "name": "miguel",
-      "surname": "Toledo",
-      "email": "toledo@mail.com",
-      "token": "gpuCpU9Vatipot5swsGN",
-      "id": 7
     }
   ]
 }

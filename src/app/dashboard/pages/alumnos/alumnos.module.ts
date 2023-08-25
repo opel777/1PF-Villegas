@@ -1,17 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SharedModule } from '../../../shared/shared.module';
-import { MatDialogModule } from '@angular/material/dialog';
-import { RouterModule } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
-import { AlumnosComponent } from './alumnos.component';
-import { FormsModule } from '@angular/forms';
-import { AlumnosRoutingModule } from './alumnos-routing.module';
-import { AlumnoFormDialogComponent } from './components/alumno-form-dialog/alumno-form-dialog.component';
-import { AlumnoTableComponent } from './components/alumno-table/alumno-table.component';
-import { AlumnosDetailComponent } from './pages/alumnos-detail/alumnos-detail.component';
-
-
+import { NgModule } from "@angular/core";
+import { AlumnosComponent } from "./alumnos.component";
+import { AlumnoFormDialogComponent } from "./components/alumno-form-dialog/alumno-form-dialog.component";
+import { AlumnoTableComponent } from "./components/alumno-table/alumno-table.component";
+import { AlumnosDetailComponent } from "./pages/alumnos-detail/alumnos-detail.component";
+import { CommonModule } from "@angular/common";
+import { SharedModule } from "src/app/shared/shared.module";
+import { RouterModule } from "@angular/router";
+import { MatDialogModule } from "@angular/material/dialog";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AlumnosRoutingModule } from "./alumnos-routing.module";
 
 
 @NgModule({
@@ -27,11 +24,8 @@ import { AlumnosDetailComponent } from './pages/alumnos-detail/alumnos-detail.co
     RouterModule,
     MatDialogModule,
     FormsModule,
-    MatIconModule,
-    AlumnosRoutingModule 
-  ],
-  exports:[
-    AlumnosComponent
+    AlumnosRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class AlumnosModule { }

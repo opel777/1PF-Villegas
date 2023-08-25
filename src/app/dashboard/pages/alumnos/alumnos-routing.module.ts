@@ -5,21 +5,20 @@ import { AlumnosComponent } from "./alumnos.component";
 import { AlumnosDetailComponent } from "./pages/alumnos-detail/alumnos-detail.component";
 
 
-
 @NgModule({
-  declarations:[],
-  imports:[
-      CommonModule,
-      RouterModule.forChild([
-          {
-              path:'',
-              component:AlumnosComponent,
-            },
-          {
-              path:'alumnos/:id',
-              component:AlumnosDetailComponent,
-            },
-      ])
-  ]
+    declarations:[],
+    imports:[
+        CommonModule,
+        RouterModule.forChild([
+            {
+                path:'',
+                component:AlumnosComponent,
+              },
+            {
+                path:'alumnos/:id',
+                component:AlumnosDetailComponent,
+              },
+        ])
+    ]
 })
-export class AlumnosRoutingModule{} 
+export class AlumnosRoutingModule{}

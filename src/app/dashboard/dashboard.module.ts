@@ -44,8 +44,9 @@ import { AlumnosModule } from './pages/alumnos/alumnos.module';
     MatDialogModule,
     ClasesModule,
     CursosModule,
-    DashboardRoutingModule,
-    AlumnosModule
+    AlumnosModule,
+    DashboardRoutingModule
+    
    
     
     
