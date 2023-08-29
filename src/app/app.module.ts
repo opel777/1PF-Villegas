@@ -8,6 +8,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { MatCardModule } from '@angular/material/card';
 import {  HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { appReducer } from './store/index';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import {  HttpClientModule } from '@angular/common/http';
     RouterModule,
     MatDialogModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(appReducer, {}),
+    
     
    
   ],
