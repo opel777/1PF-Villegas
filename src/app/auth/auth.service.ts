@@ -6,14 +6,20 @@ import { NotifierService } from "../core/services/notifier.service";
 import { Router } from "@angular/router"; 
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from "src/environments/environment";
+import { Store } from "@ngrx/store";
+import { AuthActions } from "../store/auth/auth.actions";
 
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private _authUser$ = new BehaviorSubject<User | null>(null);
-  public authUser$ = this._authUser$.asObservable();
+  // private _authUser$ = new BehaviorSubject<User | null>(null);
+  // public authUser$ = this._authUser$.asObservable();
 
-  constructor(private notifier: NotifierService, private router: Router, private HttpClient: HttpClient) {}
+  constructor(
+    private notifier: NotifierService,
+    private router: Router, 
+    private HttpClient: HttpClient,
+    private store:Store) {}
 
   isAutenticated(): Observable<boolean> {
     // return this.authUser$.pipe(take(1), map((user) => !!user));
@@ -22,26 +28,35 @@ export class AuthService {
         token:localStorage.getItem('token') || '',
       }
     }).pipe(map((usersResult)=>{
+
+      if(usersResult.length){
+        const authUser = usersResult[0];
+        // this._authUser$.next(authUser);
+        this.store.dispatch(AuthActions.setAuthUser({payload : authUser}))
+      }
       return !!usersResult.length
     }))
   }
 
   login(payLoad: LoginPayload): void {
-   this.HttpClient.get<User[]>(environment.baseApiUrl + '/users',{params:{
+   this.HttpClient.get<User[]>(environment.baseApiUrl + '/users',{
+    params:{
     email:payLoad.email || '',
     password:payLoad.password || ''
-   }}).subscribe({
+   }
+  }).subscribe({
     next:(response)=>{
       if (response.length) {
         const authUser = response[0];
-        this._authUser$.next(authUser);
+        // this._authUser$.next(authUser);
         this.router.navigate(['/dashboard/home']); 
         localStorage.setItem('token', authUser.token);
     
         
       } else {
         this.notifier.showError('Email o Contraseña invalida');
-        this._authUser$.next(null);
+        // this._authUser$.next(null);
+        this.store.dispatch(AuthActions.setAuthUser({payload:null}))
       }
 
     },
@@ -60,5 +75,8 @@ export class AuthService {
    })
 
    
+  }
+  public logout():void {
+    this.store.dispatch(AuthActions.setAuthUser({payload:null}))
   }
 }

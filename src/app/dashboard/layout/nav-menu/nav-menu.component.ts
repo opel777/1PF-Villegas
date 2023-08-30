@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -7,8 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./nav-menu.component.scss']
 })
 export class NavMenuComponent {
-  constructor(private router: Router, private activatedRoute:ActivatedRoute){}
+  constructor(private router: Router,private authService:AuthService){}
     logout(): void{
+      this.authService.logout();
       this.router.navigate(['auth','login'],{
         
       })
