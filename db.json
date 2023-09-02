@@ -150,6 +150,13 @@
       "email": "martinez@mail.com",
       "token": "gFLk6rTqUdJx0B8yixHz",
       "id": 2
+    },
+    {
+      "name": "pepe",
+      "surname": "martinez",
+      "email": "pepe@mail.com",
+      "password": "123456",
+      "id": 3
     }
   ]
 }

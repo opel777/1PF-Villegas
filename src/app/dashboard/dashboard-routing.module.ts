@@ -32,6 +32,10 @@ import { RouterModule } from '@angular/router';
         path:'alumnos',
         loadChildren:()=> import('./pages/alumnos/alumnos.module').then((m)=>m.AlumnosModule)
       },
+      {
+        path:'inscripciones',
+        loadChildren:()=> import('./pages/inscripciones/inscripciones.module').then((m)=>m.InscripcionesModule)
+      },
       
       {
         path:'**',

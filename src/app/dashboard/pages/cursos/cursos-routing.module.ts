@@ -5,19 +5,19 @@ import { CursosDetailComponent } from "./pages/cursos-detail/cursos-detail.compo
 import { RouterModule } from "@angular/router";
 
 @NgModule({
-    declarations:[],
-    imports:[
+    declarations: [],
+    imports: [
         CommonModule,
         RouterModule.forChild([
             {
-                path:'',
-                component:CursosComponent,
-              },
+                path: '',
+                component: CursosComponent,
+            },
             {
-                path:'cursos/:id',
-                component:CursosDetailComponent,
-              },
+                path: 'cursos/:id',
+                component: CursosDetailComponent,
+            },
         ])
     ]
 })
-export class CursosRoutingModule{}
+export class CursosRoutingModule { }

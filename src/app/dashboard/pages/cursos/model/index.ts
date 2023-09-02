@@ -4,6 +4,7 @@ export interface Cursos{
     title:string;
     subtitle:string;
     description:string;
+    inscripcionId:number
     
 }
 
@@ -13,6 +14,7 @@ export interface CreateCursosData{
     title:string;
     subtitle:string;
     description:string;
+    inscripcionId:number
 }
 
 export interface UpdateCursosData{
@@ -21,4 +23,5 @@ export interface UpdateCursosData{
     title?:string;
     subtitle?:string;
     description?:string;
+    inscripcionId:number
 }

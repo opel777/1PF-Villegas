@@ -30,8 +30,6 @@
               "src/assets"
             ],
             "styles": [
-              
-              
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
@@ -42,9 +40,7 @@
           },
           "configurations": {
             "production": {
-              "budgets": [
-               
-              ],
+              "budgets": [],
               "outputHashing": "all",
               "fileReplacements": [
                 {
@@ -106,6 +102,9 @@
     }
   },
   "cli": {
-    "analytics": "1790df7a-3478-429d-bd45-495bf27ffcba"
+    "analytics": "1790df7a-3478-429d-bd45-495bf27ffcba",
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
   }
 }

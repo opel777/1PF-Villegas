@@ -16,6 +16,7 @@ import { ClasesModule } from './pages/clases/clases.module';
 import { CursosModule } from './pages/cursos/cursos.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { AlumnosModule } from './pages/alumnos/alumnos.module';
+import { InscripcionesModule } from './pages/inscripciones/inscripciones.module';
 
 
 
@@ -45,6 +46,7 @@ import { AlumnosModule } from './pages/alumnos/alumnos.module';
     ClasesModule,
     CursosModule,
     AlumnosModule,
+    InscripcionesModule,
     DashboardRoutingModule
     
    

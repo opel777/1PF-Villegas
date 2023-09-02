@@ -44,6 +44,7 @@ export class CursosComponent implements OnDestroy{
               title:v.title,
               subtitle:v.subtitle,
               description:v.description,
+              inscripcionId:v.inscripcionId
             });
           }
         },

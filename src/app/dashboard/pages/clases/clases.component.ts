@@ -41,6 +41,7 @@ export class ClasesComponent implements OnDestroy {
             id:v.id,
             name:v.name,
             nameteacher:v.nameteacher,
+            inscripcionId:v.inscripcionId
        
           });
         }

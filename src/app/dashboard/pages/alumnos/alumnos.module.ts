@@ -9,6 +9,10 @@ import { RouterModule } from "@angular/router";
 import { MatDialogModule } from "@angular/material/dialog";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AlumnosRoutingModule } from "./alumnos-routing.module";
+import { EffectsModule } from '@ngrx/effects';
+
+import { StoreModule } from "@ngrx/store";
+
 
 
 @NgModule({
@@ -24,8 +28,9 @@ import { AlumnosRoutingModule } from "./alumnos-routing.module";
     RouterModule,
     MatDialogModule,
     FormsModule,
+    ReactiveFormsModule,
     AlumnosRoutingModule,
-    ReactiveFormsModule
+   
   ]
 })
 export class AlumnosModule { }
