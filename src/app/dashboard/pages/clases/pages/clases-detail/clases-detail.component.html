@@ -1,3 +1,10 @@
 <button [routerLink]="['..']">
     <mat-icon>arrow_back</mat-icon>
 </button>
+<div *ngIf="userDetails">
+    <h2>Detalles del Usuario</h2>
+    <p><strong>Nombre:</strong> {{ userDetails.name }}</p>
+    <p><strong>Apellido:</strong> {{ userDetails.nameteacher }}</p>
+    
+    
+  </div>
