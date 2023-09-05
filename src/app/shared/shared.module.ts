@@ -10,6 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import { FullNamePipe } from './pipes/full-name.pipe';
 import { SizeTittleDirective } from './directives/size-tittle.directive';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { SizeTittleDirective } from './directives/size-tittle.directive';
     MatDialogModule,
     MatTableModule,
     FullNamePipe,
-    SizeTittleDirective
+    SizeTittleDirective,
+    MatSelectModule
    
     
   ]

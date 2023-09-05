@@ -94,8 +94,9 @@ export class CursosService {
       ).subscribe({
         next: (arrayActualizado) => this.loadCursos(),
       })
+  }
 
-
-
+  getCursosByCategoryId(categoryId : number):Observable<Cursos[]>{
+return this.httpClient.get<Cursos[]>(environment.baseApiUrl + `/cursos?categoryId=${categoryId}`)
   }
 }

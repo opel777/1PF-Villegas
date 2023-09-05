@@ -16,13 +16,17 @@ editingUser?:User;
   surnameControl = new FormControl<string | null>(null,[Validators.required,Validators.minLength(2)]);
   emailControl = new FormControl<string | null>(null,[Validators.required,Validators.pattern(/^\w+([\-\.]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]);
   passwordControl = new FormControl<string | null>(null,[Validators.required]);
+  rolControl = new FormControl<string | null>(null,[Validators.required]);
   
   
     userForm = new FormGroup({
        name: this.nameControl,
        surname: this.surnameControl,
        email: this.emailControl,
-       password: this.passwordControl
+       password: this.passwordControl,
+       rol:this.rolControl,
+       
+      
     });
   
   constructor(private dialogRef:MatDialogRef<UserFormDialogComponent >,
@@ -34,6 +38,8 @@ editingUser?:User;
         this.surnameControl.setValue(this.data.surname);
         this.emailControl.setValue(this.data.email);
         this.passwordControl.setValue(this.data.password);
+        this.rolControl.setValue(this.data.rol)
+
       }
   }
     onSubmit():void{
@@ -41,7 +47,13 @@ editingUser?:User;
       if(this.userForm.invalid){
         this.userForm.markAllAsTouched()
       } else {
-        this.dialogRef.close(this.userForm.value);
+        const payload: any ={
+          ...this.userForm.value
+        }
+        if(this.editingUser){
+          payload['token']= this.editingUser.token;
+        }
+        this.dialogRef.close(payload);
       }
       
     }

@@ -29,10 +29,10 @@
           <button  [routerLink]="['/dashboard/clases', element.id]" mat-icon-button >
             <mat-icon>visibility</mat-icon>
           </button>
-          <button (click)="editMateria.emit(element)" mat-icon-button >
+          <button [disabled]="!(isAdmin$ | async)" (click)="editMateria.emit(element)" mat-icon-button >
             <mat-icon>edit</mat-icon>
           </button>
-          <button (click)="deleteMateria.emit(element)" mat-icon-button color="warn">
+          <button [disabled]="!(isAdmin$ | async)" (click)="deleteMateria.emit(element)" mat-icon-button color="warn">
             <mat-icon>delete</mat-icon>
            </button>
         </td>

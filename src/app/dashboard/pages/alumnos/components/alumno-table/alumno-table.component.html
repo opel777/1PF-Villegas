@@ -23,10 +23,10 @@
             <button [routerLink]="['/dashboard/alumnos', element.id]" mat-icon-button >
               <mat-icon>visibility</mat-icon>
             </button>
-            <button (click)="editAlumno.emit(element)" mat-icon-button >
+            <button [disabled]="!(isAdmin$ | async)" (click)="editAlumno.emit(element)" mat-icon-button >
               <mat-icon>edit</mat-icon>
             </button>
-            <button (click)="deleteAlumno.emit(element)" mat-icon-button color="warn">
+            <button [disabled]="!(isAdmin$ | async)" (click)="deleteAlumno.emit(element)" mat-icon-button color="warn">
               <mat-icon>delete</mat-icon>
              </button>
           </td>

@@ -54,6 +54,15 @@
             </mat-error>
         </mat-form-field>
     </div>
+    <div class="field col-12 p-1">
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label >Rol</mat-label>
+            <mat-select [formControl]="rolControl" >
+                <mat-option value="ADMINISTRADOR">ADMINISTRADOR</mat-option>
+                <mat-option value="USUARIO">USUARIO</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
 </div>
 </form>
 </div>

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { InscripcionesActions } from './store/inscripciones.actions';
+import { InscripcionWithCursoAndAlumno } from './model';
 import { Observable } from 'rxjs';
-import { Inscripcion } from './model';
-import { selectInscripcionesArray } from './store/inscripciones.selectors';
+import { selectInscripciones } from './store/inscripciones.selectors';
+import { MatDialog } from '@angular/material/dialog';
+import { InscripcionesFormDialogComponent } from './components/inscripciones-form-dialog/inscripciones-form-dialog.component';
 
 @Component({
   selector: 'app-inscripciones',
@@ -11,18 +13,17 @@ import { selectInscripcionesArray } from './store/inscripciones.selectors';
   styleUrls: ['./inscripciones.component.scss']
 })
 export class InscripcionesComponent implements OnInit{
+  displayedColumns=['id','name','curso'];
+  inscripciones$: Observable<InscripcionWithCursoAndAlumno[]>;
 
-  inscripciones$:Observable<Inscripcion[]>
-
-  constructor(private store: Store){
-    this.inscripciones$=this.store.select(selectInscripcionesArray)
+  constructor(private store:Store, private matDialog: MatDialog){
+     this.inscripciones$ = this.store.select(selectInscripciones)
   }
-  displayedColumns=['id','name','actions']
 
-
-
+  onAdd(): void{
+    this.matDialog.open(InscripcionesFormDialogComponent);
+  }
   ngOnInit(): void {
     this.store.dispatch(InscripcionesActions.loadInscripciones())
   }
-  
 }

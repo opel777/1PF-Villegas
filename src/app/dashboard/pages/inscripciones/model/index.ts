@@ -1,4 +1,14 @@
+import { Alumno } from "../../alumnos/model";
+import { Cursos } from "../../cursos/model";
+
+
 export interface Inscripcion{
-    id:number,
-    name:string
+    id:number;
+    cursoId:number;
+    alumnoId:number;
+}
+
+export interface InscripcionWithCursoAndAlumno extends Inscripcion{
+    curso:Cursos;
+    alumno:Alumno
 }

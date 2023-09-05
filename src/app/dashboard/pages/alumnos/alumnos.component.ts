@@ -4,6 +4,8 @@ import { Observable, Subject } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { AlumnosService } from './alumnos.service';
 import { AlumnoFormDialogComponent } from './components/alumno-form-dialog/alumno-form-dialog.component';
+import { Store } from '@ngrx/store';
+import { selectIsAdmin } from '../../../store/auth/auth.selectors';
 
 
 @Component({
@@ -15,12 +17,17 @@ export class AlumnosComponent implements OnDestroy {
   public alumnos: Observable<Alumno[]>;
   public isLoading$: Observable<boolean>;
   public destroyed = new Subject<boolean>();
+  public isAdmin$:Observable<boolean>
 
   public loading = false;
-  constructor(private matDialog: MatDialog, private alumnoService: AlumnosService) {
+  constructor(
+    private matDialog: MatDialog,
+     private alumnoService: AlumnosService,
+     private store:Store) {
     this.alumnoService.loadAlumno();
     this.isLoading$ = this.alumnoService.isLoading$;
     this.alumnos = this.alumnoService.getAlumno();
+    this.isAdmin$ = this.store.select(selectIsAdmin)
   }
   ngOnDestroy(): void {
     

@@ -7,7 +7,7 @@
 (editMateria)="onEditClase($event)"></app-clases-table>
 
 <div class="mb-5 p-3" >
-    <button (click)="onCreateClase()" mat-flat-button color="primary" type="button">
+    <button [disabled]="!(isAdmin$ | async)" (click)="onCreateClase()" mat-flat-button color="primary" type="button">
      <mat-icon>add</mat-icon>
         Crear clase
     </button>

@@ -16,7 +16,9 @@ import { ClasesModule } from './pages/clases/clases.module';
 import { CursosModule } from './pages/cursos/cursos.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { AlumnosModule } from './pages/alumnos/alumnos.module';
+import { CategoriasModule } from './pages/categorias/categorias.module';
 import { InscripcionesModule } from './pages/inscripciones/inscripciones.module';
+
 
 
 
@@ -28,6 +30,7 @@ import { InscripcionesModule } from './pages/inscripciones/inscripciones.module'
     DashboardComponent,
     NavMenuComponent,
     ToolbarComponent,
+    
     
    
    
@@ -46,6 +49,7 @@ import { InscripcionesModule } from './pages/inscripciones/inscripciones.module'
     ClasesModule,
     CursosModule,
     AlumnosModule,
+    CategoriasModule,
     InscripcionesModule,
     DashboardRoutingModule
     

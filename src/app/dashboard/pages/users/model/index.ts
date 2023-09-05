@@ -5,6 +5,7 @@ export interface User{
     email:string;
     password:string;
     token:string;
+    rol:'ADMINISTRADOR'|'USUARIO'
 }
 
 export interface CreateUserData{
@@ -21,4 +22,5 @@ export interface UpdateUserData{
     surname?:string;
     email?:string;
     password?:string;
+    token:string;
 }

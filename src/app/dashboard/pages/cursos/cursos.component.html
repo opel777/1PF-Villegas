@@ -5,7 +5,7 @@
 (editCursos)="onEditCursos($event)"></app-cursos-table>
 
 <div class="mb-5 p-3" >
-    <button (click)="onCreateCursos()" mat-flat-button color="primary" type="button">
+    <button [disabled]="!(isAdmin$ | async)" (click)="onCreateCursos()" mat-flat-button color="primary" type="button">
      <mat-icon>add</mat-icon>
         Crear Curso
     </button>

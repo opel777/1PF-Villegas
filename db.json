@@ -1,19 +1,21 @@
 {
   "users": [
     {
-      "id": 1,
       "name": "Gustavo",
       "surname": "villegas",
       "email": "villegas@mail.com",
       "password": "123456",
-      "token": "6DHvGBS08Z6UdrMM10ac"
+      "token": "7DHvGBSO7Z6UdrMM10hf",
+      "rol": "ADMINISTRADOR",
+      "id": 1
     },
     {
       "name": "gustavoooo",
+      "surname": "pepepelocuas",
       "email": "villegasgustavoopel@hotmail.com",
       "password": "tomasa1679",
-      "surname": "pepepelocuas",
-      "token": "Ttc3saCUpFZxSfww1qST",
+      "rol": "USUARIO",
+      "token": "7DHvGBSO7Z6UdrMM10hi",
       "id": 2
     },
     {
@@ -79,11 +81,11 @@
       "description": "Java es una plataforma informática de lenguaje de programación creada por Sun Microsystems en 1995. Ha evolucionado desde sus humildes comienzos hasta impulsar una gran parte del mundo."
     },
     {
+      "id": 9,
       "image": "https://www.alertadigital.com/wp-content/uploads/2020/08/python-1024x634.jpg",
       "title": "Python",
       "subtitle": "Curso Python",
-      "description": "Python es un lenguaje de programación que te permite trabajar más rápido e integrar tus sistemas de manera más eficiente. Es fácil de aprender y poderoso al mismo tiempo.",
-      "id": 9
+      "description": "Python es un lenguaje de programación que te permite trabajar más rápido e integrar tus sistemas de manera más eficiente. Es fácil de aprender y poderoso al mismo tiempo."
     },
     {
       "id": 10,
@@ -157,6 +159,34 @@
       "email": "pepe@mail.com",
       "password": "123456",
       "id": 3
+    },
+    {
+      "name": "Rodrigo",
+      "surname": "martinez",
+      "email": "rodrigo@mail.com",
+      "password": "123456",
+      "id": 4
     }
+  ],
+  "Inscripciones": [
+    {
+      
+      "id": 2,
+      "cursoId":5,
+      "alumnoId":2
+    },
+    {
+      
+      "id": 3,
+      "cursoId":6,
+      "alumnoId":3
+    },
+    {
+      
+      "id": 4,
+      "cursoId":7,
+      "alumnoId":4
+    }
+  
   ]
 }

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { adminGuard } from '../core/guards/admin.guard';
+import { InscripcionesEffects } from './pages/inscripciones/store/inscripciones.effects';
 
 
 
@@ -15,6 +17,7 @@ import { RouterModule } from '@angular/router';
 
       {
         path:'users',
+        canActivate:[adminGuard],
         loadChildren:()=> import('./pages/users/users.module').then((m)=>m.UsersModule)
         
       },
@@ -31,6 +34,10 @@ import { RouterModule } from '@angular/router';
       {
         path:'alumnos',
         loadChildren:()=> import('./pages/alumnos/alumnos.module').then((m)=>m.AlumnosModule)
+      },
+      {
+        path:'categorias',
+        loadChildren:()=> import('./pages/categorias/categorias.module').then((m)=>m.CategoriasModule)
       },
       {
         path:'inscripciones',

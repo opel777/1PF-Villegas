@@ -1,0 +1,33 @@
+<h1><span appSizeTittle>Categorias</span></h1>
+<table>
+    <table mat-table [dataSource]="(categorias$ | async) || []" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef><span appSizeTittle> Id</span></th>
+          <td mat-cell *matCellDef="let categorias"> {{categorias.id}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef><span appSizeTittle> Nombre</span></th>
+          <td mat-cell *matCellDef="let categorias"> {{categorias.name}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef><span appSizeTittle> Acciones</span> </th>
+          <td mat-cell *matCellDef="let categorias"> 
+            <button [routerLink]="categorias.id"  mat-icon-button >
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button  mat-icon-button >
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn">
+              <mat-icon>delete</mat-icon>
+             </button>
+          </td>
+          
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+</table>
