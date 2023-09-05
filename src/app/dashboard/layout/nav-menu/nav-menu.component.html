@@ -1,10 +1,10 @@
 <mat-nav-list>
-    <a routerLink="home" mat-list-item>Inicio</a>
-    <a *ngIf=" selectIsAdmin$ | async " routerLink="users" mat-list-item>Usuario</a>
-    <a routerLink="alumnos" mat-list-item>Alumnos</a>
-    <a routerLink="cursos" mat-list-item>Cursos</a>
-    <a routerLink="clases" mat-list-item>Clases</a>
-    <a routerLink="categorias" mat-list-item>Categorias</a>
-    <a routerLink="inscripciones" mat-list-item>Inscripciones</a>
-    <a (click)="logout()" mat-list-item>Cerrar Sesion</a>
+    <a routerLink="home" mat-list-item><mat-icon>home</mat-icon> Inicio</a>
+    <a *ngIf=" selectIsAdmin$ | async " routerLink="users" mat-list-item><mat-icon>account_box</mat-icon> Usuario</a>
+    <a routerLink="alumnos" mat-list-item><mat-icon>face</mat-icon> Alumnos</a>
+    <a routerLink="cursos" mat-list-item><mat-icon>assignment</mat-icon> Cursos</a>
+    <a routerLink="clases" mat-list-item><mat-icon>class</mat-icon> Clases</a>
+    <a routerLink="categorias" mat-list-item><mat-icon>dashboard</mat-icon> Categorias</a>
+    <a routerLink="inscripciones" mat-list-item><mat-icon>description</mat-icon> Inscripciones</a>
+    <a (click)="logout()" mat-list-item><mat-icon> directions_walk</mat-icon> Cerrar Sesion</a>
   </mat-nav-list>
