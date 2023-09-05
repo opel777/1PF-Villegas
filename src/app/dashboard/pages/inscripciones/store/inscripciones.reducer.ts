@@ -8,7 +8,7 @@ export const inscripcionesFeatureKey = 'inscripciones';
 
 export interface State {
   data: InscripcionWithCursoAndAlumno[];
-  alumnoOptions:Alumno[],
+  alumnosOptions:Alumno[],
   cursoOptions:Cursos[],
   loading:boolean;
   error:unknown
@@ -17,7 +17,7 @@ export interface State {
 
 export const initialState: State = {
 data:[],
-alumnoOptions:[],
+alumnosOptions:[],
 cursoOptions:[],
 loading:false,
 error:null
@@ -32,6 +32,7 @@ export const reducer = createReducer(
       loading:true
     }
   }),
+
   on(InscripcionesActions.loadInscripcionesSuccess, (state, action) => {
     return {
       ...state,
@@ -39,6 +40,7 @@ export const reducer = createReducer(
       loading:false
     }
   }),
+
   on(InscripcionesActions.loadInscripcionesFailure, (state, action) => {
     return {
       ...state,
@@ -46,7 +48,17 @@ export const reducer = createReducer(
       loading:false
     }
   }),
+
+
+  on(InscripcionesActions.loadAlumnosOption,(state)=> state),
+  on(InscripcionesActions.loadAlumnosOptionSuccess,(state, action)=>{
+  return {
+    ...state,
+    alumnosOptions: action.data,
+  }
+})
 );
+
 
 export const inscripcionesFeature = createFeature({
   name: inscripcionesFeatureKey,

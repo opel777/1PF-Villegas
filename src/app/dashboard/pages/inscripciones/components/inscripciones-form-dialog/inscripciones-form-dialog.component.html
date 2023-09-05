@@ -5,10 +5,14 @@
       <mat-label>Curso</mat-label>
       <mat-select [formControl]="cursoIdControl"></mat-select>
     </mat-form-field>
-
+    <!-- <pre><code>{{alumnosOption$ | async | json}}</code></pre> -->
     <mat-form-field class="w-100" appearance="outline">
       <mat-label>Alumno</mat-label>
-      <mat-select [formControl]="alumnoIdControl"></mat-select>
+      <mat-select [formControl]="alumnoIdControl">
+        <mat-option *ngFor="let alumnos of alumnosOption$ | async">
+          {{alumnos.name}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
   </form>
 </div>

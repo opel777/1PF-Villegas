@@ -13,11 +13,11 @@ export const InscripcionesActions = createActionGroup({
 
     'Load Cursos Option': emptyProps(),
     'Load Cursos Option Success' : props<{data:Cursos[]}>(),
-    'Load Cursos Failure': props<{ error: HttpErrorResponse }>(),
+    'Load Cursos Option Failure': props<{ error: HttpErrorResponse }>(),
 
     'Load Alumnos Option': emptyProps(),
     'Load Alumnos Option Success' : props<{data:Alumno[]}>(),
-    'Load Alumnos Failure': props<{ error: HttpErrorResponse }>(),
+    'Load Alumnos Option Failure': props<{ error: HttpErrorResponse }>(),
 
   }
 });

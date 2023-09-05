@@ -30,9 +30,6 @@ import { InscripcionesModule } from './pages/inscripciones/inscripciones.module'
     DashboardComponent,
     NavMenuComponent,
     ToolbarComponent,
-    
-    
-   
    
   ],
   imports: [
