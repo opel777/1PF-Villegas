@@ -1,3 +1,19 @@
 <button [routerLink]="['..']">
     <mat-icon>arrow_back</mat-icon>
 </button>
+<div class="grid">
+    <h1>Cursos</h1>
+    <div class="row">
+      <mat-card class="col-3 example-card" *ngIf="userDetails">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ userDetails.title }}</mat-card-title>
+          <mat-card-subtitle>{{ userDetails.subtitle }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="userDetails.image" alt="Photo of a course">
+        <mat-card-content>
+          <p>{{ userDetails.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>

@@ -203,6 +203,11 @@
       "cursoId": 13,
       "alumnoId": 2,
       "id": 8
+    },
+    {
+      "cursoId": 6,
+      "alumnoId": 4,
+      "id": 9
     }
   ]
 }

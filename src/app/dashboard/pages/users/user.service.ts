@@ -30,16 +30,18 @@ export class UserService {
     }).subscribe({
       next: (response) => {
         // SI TODO SALE OK...
+        
         this._users$.next(response);
       },
       error: () => {
         // SI TODO SALE MAL
-        this.notifier.showError('Error al cargar los usuarios');
+        
       },
       complete: () => {
         this._isLoading$.next(false);
         // SE COMPLETO EL OBSERVABLE
       },
+      
     })
 
   }
@@ -81,6 +83,7 @@ export class UserService {
     this.httpClient.put(environment.baseApiUrl + '/users/' + id, usuarioActualizado).subscribe({
       next: () => this.loadUsers(),
     })
+ 
 
   }
 

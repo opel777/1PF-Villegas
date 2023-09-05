@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { User } from '../../../users/model';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
-import { NotifierService } from 'src/app/core/services/notifier.service';
+import { CursosService } from '../../cursos.service';
 
 @Component({
   selector: 'app-cursos-detail',
@@ -9,14 +8,22 @@ import { NotifierService } from 'src/app/core/services/notifier.service';
   styles: [
   ]
 })
-export class CursosDetailComponent {
-  public user:User|null=null
-  constructor(private ActivatedRoute:ActivatedRoute,private router:Router,private notification:NotifierService){
-    console.log(this.ActivatedRoute.snapshot.params['id']),
-    console.log(this.ActivatedRoute.snapshot.paramMap.get('id'))
-    if(!Number(this.ActivatedRoute.snapshot.params['id'])){
-      this.router.navigate(['dashboard','users'])
-      this.notification.showError(`${this.ActivatedRoute.snapshot.params['id']}no es un ID  o ruta Valido`)
-    }
-}
+export class CursosDetailComponent implements OnInit{
+  userId: number = 0; 
+  userDetails: any; 
+  
+  constructor(private route: ActivatedRoute, private cursosService: CursosService) { }
+  
+  ngOnInit(): void {
+  
+    this.route.paramMap.subscribe(params => {
+      const idParam = params.get('id');
+      if (idParam !== null) {
+        this.userId = +idParam; 
+        this.cursosService.getCursosById(this.userId).subscribe(user => {
+          this.userDetails = user;
+        });
+      } 
+  })
+  }
 }
