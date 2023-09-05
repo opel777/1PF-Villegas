@@ -9,7 +9,7 @@ export const inscripcionesFeatureKey = 'inscripciones';
 export interface State {
   data: InscripcionWithCursoAndAlumno[];
   alumnosOptions:Alumno[],
-  cursoOptions:Cursos[],
+  cursosOptions:Cursos[],
   loading:boolean;
   error:unknown
 
@@ -18,7 +18,7 @@ export interface State {
 export const initialState: State = {
 data:[],
 alumnosOptions:[],
-cursoOptions:[],
+cursosOptions:[],
 loading:false,
 error:null
 };
@@ -56,7 +56,17 @@ export const reducer = createReducer(
     ...state,
     alumnosOptions: action.data,
   }
+}),
+
+on(InscripcionesActions.loadCursosOption,(state)=> state),
+  on(InscripcionesActions.loadCursosOptionSuccess,(state, action)=>{
+  return {
+    ...state,
+    cursosOptions: action.data,
+  }
 })
+
+
 );
 
 

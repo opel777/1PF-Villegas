@@ -4,7 +4,9 @@ import { Store } from "@ngrx/store";
 import { InscripcionesActions } from "../../store/inscripciones.actions";
 import { Observable } from 'rxjs';
 import { Alumno } from "../../../alumnos/model";
-import { selectAlumnoOptions } from "../../store/inscripciones.selectors";
+import { selectAlumnoOptions, selectCursoOptions } from "../../store/inscripciones.selectors";
+import { Cursos } from "../../../cursos/model";
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
     selector: 'app-inscripciones-form-dialog',
@@ -23,13 +25,25 @@ import { selectAlumnoOptions } from "../../store/inscripciones.selectors";
      })
 
      alumnosOption$: Observable<Alumno[]>;
+     cursosOption$: Observable<Cursos[]>
 
-     constructor (private store :Store ){
+     constructor (private store :Store, private matDialogRef: MatDialogRef<InscripcionesFormDialogComponent> ){
       this.alumnosOption$ = this.store.select(selectAlumnoOptions);
+      this.cursosOption$ = this.store.select(selectCursoOptions)
      }
 
   ngOnInit(): void {
     this.store.dispatch(InscripcionesActions.loadCursosOption());
     this.store.dispatch(InscripcionesActions.loadAlumnosOption());
+  }
+
+  onSubmit(): void{
+    if(this.inscripcionesForm.invalid){
+      this.inscripcionesForm.markAllAsTouched();
+    }else {
+
+      this.store.dispatch(InscripcionesActions.createInscripcion({payload : this.inscripcionesForm.getRawValue()}));
+      this.matDialogRef.close();
+    }
   }
   }

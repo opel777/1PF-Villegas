@@ -12,3 +12,8 @@ export interface InscripcionWithCursoAndAlumno extends Inscripcion{
     curso:Cursos;
     alumno:Alumno
 }
+
+export interface CreateInscripcionPayload{
+    cursoId:number | null;
+    alumnoId:number | null
+} 
