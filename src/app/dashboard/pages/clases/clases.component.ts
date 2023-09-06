@@ -45,7 +45,7 @@ export class ClasesComponent implements OnDestroy {
         if (v) {
           this.clasesService.createClase({
             id:v.id,
-            name:v.name,
+            title:v.name,
             nameteacher:v.nameteacher,
             inscripcionId:v.inscripcionId
        
@@ -57,7 +57,7 @@ export class ClasesComponent implements OnDestroy {
   
   //funcion para eliminar //
   onDeleteClase(claseToDelete: Materia): void{
-    if (confirm(`¿Está seguro de eliminar a ${claseToDelete.name}?`)) {
+    if (confirm(`¿Está seguro de eliminar a ${claseToDelete.title}?`)) {
       this.clasesService.deleteClaseById(claseToDelete.id);
     }
   }

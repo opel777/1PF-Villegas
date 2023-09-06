@@ -1,16 +1,16 @@
-<h1 mat-dialog-title>{{editingClase ? "Editando a " + editingClase.name + " " + editingClase.nameteacher :"Creando Clase"}}</h1>
+<h1 mat-dialog-title>{{editingClase ? "Editando a " + editingClase.title + " " + editingClase.nameteacher :"Creando Clase"}}</h1>
 <div mat-dialog-content>
 <form [formGroup]="clasesForm" class="grid">
     <div class="field-row">
     <div class="field col-6 p-1">
         <mat-form-field class="w-100" appearance="outline">
             <mat-label>Nombre clase</mat-label>
-            <input formControlName="name" matInput  placeholder="Nombre de la Clase" type="text" name="name"/>
-            <mat-error *ngIf="nameControl.hasError('required')">
+            <input formControlName="title" matInput  placeholder="Nombre de la Clase" type="text" name="title"/>
+            <mat-error *ngIf="titleControl.hasError('required')">
                 Este campo es Requerido
             </mat-error>
-            <mat-error *ngIf="nameControl.hasError('minlength')">
-                Este campo debe tener al menos {{nameControl.errors?.['minlength']?.requiredLength}} letras
+            <mat-error *ngIf="titleControl.hasError('minlength')">
+                Este campo debe tener al menos {{titleControl.errors?.['minlength']?.requiredLength}} letras
             </mat-error>
         </mat-form-field>
     </div>

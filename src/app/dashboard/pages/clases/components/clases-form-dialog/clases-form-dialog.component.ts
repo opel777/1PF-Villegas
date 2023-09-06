@@ -10,13 +10,13 @@ import { Materia } from '../../model';
 })
 export class ClasesFormDialogComponent {
   editingClase?:Materia;
-  nameControl = new FormControl<string | null>(null,[Validators.required,Validators.minLength(2)]);
+  titleControl = new FormControl<string | null>(null,[Validators.required,Validators.minLength(2)]);
   nameteacherControl = new FormControl<string | null>(null,[Validators.required,Validators.minLength(2)]);
   
   
   
     clasesForm = new FormGroup({
-       name: this.nameControl,
+      title: this.titleControl,
        nameteacher: this.nameteacherControl,
       
     });
@@ -26,7 +26,7 @@ export class ClasesFormDialogComponent {
     ){
       if(this.data){
        this.editingClase = this.data
-        this.nameControl.setValue(this.data.name);
+        this.titleControl.setValue(this.data.title);
         this.nameteacherControl.setValue(this.data.nameteacher);
       
       }

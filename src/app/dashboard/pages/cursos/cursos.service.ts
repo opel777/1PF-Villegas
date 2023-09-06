@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { generateRandomString } from 'src/app/shared/utils/helpers';
 import { environment } from 'src/environments/environment';
 import { CreateCursosData, Cursos, UpdateCursosData } from './model';
+import { Materia } from '../clases/model';
 
 
 @Injectable({
@@ -99,4 +100,8 @@ export class CursosService {
   getCursosByCategoryId(categoryId : number):Observable<Cursos[]>{
 return this.httpClient.get<Cursos[]>(environment.baseApiUrl + `/cursos?categoryId=${categoryId}`)
   }
+
+  getMateriaByCategoryId(categoryId : number):Observable<Materia[]>{
+    return this.httpClient.get<Materia[]>(environment.baseApiUrl + `/materias?categoryId=${categoryId}`)
+      }
 }

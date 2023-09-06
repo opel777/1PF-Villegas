@@ -119,29 +119,27 @@
   "materias": [
     {
       "id": 1,
-      "name": "Bases de Datos",
+      "title": "Bases de Datos",
       "nameteacher": "Prof. Jose Perez"
     },
     {
       "id": 2,
-      "name": "Sql",
+      "title": "Sql",
       "nameteacher": "Prof. Juan Rodriguez"
     },
     {
-      "name": "Ruby",
+      "title": "Ruby",
       "nameteacher": "Prof. Alejandro Bolivar",
       "id": 3
     },
     {
-      "name": "patron de diseno",
-      "nameteacher": "prof. miguel",
-      "token": "sTM1d2Cr2nScCwOqYUFr",
+      "title": "patron de diseno",
+      "nameteacher": "prof. Alejandro",
       "id": 4
     },
     {
-      "name": "adrfgdsfgh",
-      "nameteacher": "hsdfgdf",
-      "token": "hRF5dZvB7axE8q4RyW28",
+      "title": "logica",
+      "nameteacher": "prof. Rodrigo",
       "id": 5
     }
   ],

@@ -15,7 +15,7 @@ export class ClasesTableComponent {
   constructor(private store:Store){
     this.isAdmin$ = this.store.select(selectIsAdmin)
   }
-  displayedColumns: string[] = ['id', 'name', 'nameteacher','actions'];
+  displayedColumns: string[] = ['id', 'title', 'nameteacher','actions'];
   @Input()
   dataSource: Materia[]= [];
 
