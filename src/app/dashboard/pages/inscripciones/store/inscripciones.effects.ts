@@ -104,7 +104,7 @@ createInscripcionSuccess$ = createEffect(() => {
     return this.httpClient.post<Inscripcion[]>(environment.baseApiUrl + '/inscripciones', payload)
    }
 
-   private deleteInscripcionInServer(id: number): Observable<unknown> {
-    return this.httpClient.delete(environment.baseApiUrl + '/inscripciones/' + id);
+   private deleteInscripcionInServer(id: number): Observable<InscripcionWithCursoAndAlumno[]> {
+    return this.httpClient.delete<InscripcionWithCursoAndAlumno[]>(environment.baseApiUrl + '/inscripciones/' + id);
   }
 }
