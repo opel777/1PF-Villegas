@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { InscripcionesActions } from './store/inscripciones.actions';
-import { InscripcionWithCursoAndAlumno } from './model';
+import {  InscripcionWithCursoAndAlumno } from './model';
 import { Observable } from 'rxjs';
 import { selectInscripciones } from './store/inscripciones.selectors';
 import { MatDialog } from '@angular/material/dialog';
@@ -13,7 +13,7 @@ import { InscripcionesFormDialogComponent } from './components/inscripciones-for
   styleUrls: ['./inscripciones.component.scss']
 })
 export class InscripcionesComponent implements OnInit{
-  displayedColumns=['id','name','curso'];
+  displayedColumns=['id','name','curso','actions'];
   inscripciones$: Observable<InscripcionWithCursoAndAlumno[]>;
 
   constructor(private store:Store, private matDialog: MatDialog){
@@ -26,4 +26,11 @@ export class InscripcionesComponent implements OnInit{
   ngOnInit(): void {
     this.store.dispatch(InscripcionesActions.loadInscripciones())
   }
+  onDeleteInscripcion(id: number) {
+    this.store.dispatch(InscripcionesActions.deleteInscripciones({ id }));
+    
+  }
+  trackByFn(index: any, item: any) {
+    return index
+}
 }

@@ -1,4 +1,4 @@
-import { createActionGroup, emptyProps, props } from '@ngrx/store';
+import { createAction, createActionGroup, emptyProps, props } from '@ngrx/store';
 import { CreateInscripcionPayload, Inscripcion, InscripcionWithCursoAndAlumno } from '../model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Cursos } from '../../cursos/model';
@@ -24,5 +24,9 @@ export const InscripcionesActions = createActionGroup({
     'Create Inscripcion Success' : props<{data:Inscripcion[]}>(),
     'Create Inscripcion Failure': props<{ error: HttpErrorResponse }>(),
 
+    'Delete Inscripciones': props<{ id:number }>(), 
+    'Delete Inscripciones Success': props<{ id: number }>(), 
+    'Delete Inscripciones Failure': props<{ error: any }>(), 
   }
 });
+
