@@ -27,7 +27,7 @@ export class InscripcionesComponent implements OnInit{
     this.store.dispatch(InscripcionesActions.loadInscripciones())
   }
   onDeleteInscripcion(id: number) {
-    this.store.dispatch(InscripcionesActions.deleteInscripciones({ id }));
+    this.store.dispatch(InscripcionesActions.deleteInscripcionesOption({ id }));
     
   }
   trackByFn(index: any, item: any) {

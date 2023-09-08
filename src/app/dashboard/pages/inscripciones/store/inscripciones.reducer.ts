@@ -65,7 +65,7 @@ on(InscripcionesActions.loadCursosOption,(state)=> state),
     cursosOptions: action.data,
   }
 }),
-on(InscripcionesActions.deleteInscripciones, (state, { id }) => ({
+on(InscripcionesActions.deleteInscripcionesOption, (state, { id }) => ({
   ...state,
   data: state.data.filter(inscripciones => inscripciones.id !== id),
 }))

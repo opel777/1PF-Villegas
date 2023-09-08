@@ -186,21 +186,6 @@
       "cursoId": 8,
       "alumnoId": 4,
       "id": 5
-    },
-    {
-      "cursoId": 10,
-      "alumnoId": 3,
-      "id": 6
-    },
-    {
-      "cursoId": 12,
-      "alumnoId": 3,
-      "id": 7
-    },
-    {
-      "cursoId": 13,
-      "alumnoId": 2,
-      "id": 8
     }
   ]
 }

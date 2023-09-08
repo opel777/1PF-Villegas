@@ -71,7 +71,23 @@ createInscripcion$ = createEffect(() => {
         catchError(error => of(InscripcionesActions.loadCursosOptionFailure({ error }))))
     )
   );
-});
+}); 
+////eliminando  curso////
+
+deleteInscripcionInServer$= createEffect(() => {
+  return this.actions$.pipe(
+
+    ofType(InscripcionesActions.deleteInscripcionesOption),
+    concatMap((action) =>
+      /** An EMPTY observable only emits completion. Replace with your own observable API request */
+      this.deleteInscripcionInServer(action.id).pipe(
+        map(data => InscripcionesActions.loadInscripcionesSuccess({ data })),
+        catchError(error => of(InscripcionesActions.deleteInscripcionesOptionFailure({ error }))))
+    )
+  );
+}); 
+
+
 
 ////creando recarga con datos ///
 
